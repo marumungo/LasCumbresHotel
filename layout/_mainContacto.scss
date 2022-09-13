@@ -1,0 +1,101 @@
+/* estilos main contacto */
+.preguntas_contacto {
+    margin: 0% 0% 3% 1%;
+    padding-top: 12%;
+    width: 100%;
+    z-index: 1;
+
+    .contactoGrupo {
+        margin: 0% 7% 3% 7%;
+
+        .contacto {
+            font-family: $tipografiaTextos;
+            font-weight: bolder;
+            font-size: 1rem;
+            text-align: left;
+
+            @include pantallaGrande {
+                font-size: 1.5rem;
+            }
+        }
+
+        form {
+            font-family: $tipografiaTextos;
+            margin-top: 2%;
+            font-size: 0.8rem;
+
+            select {
+                font-size: 0.8rem;
+
+                &:focus {
+                    border-color: $colorBotones;
+                    box-shadow: none;
+                }
+
+                @include pantallaGrande {
+                    font-size: 1rem;
+                }
+            }
+
+            .btn {
+                background-color: $colorBotones;
+                font-size: 0.8rem;
+
+                @include pantallaGrande {
+                    font-size: 1rem;
+                }
+            }
+
+            .btn-primary {
+                border: none;
+            }
+
+            .form-control {
+                &:focus {
+                    border-color: $colorBotones;
+                    box-shadow: none;
+                }
+            }
+
+            .form-check-input {
+                &:focus {
+                    box-shadow: none;
+                    border-color: $colorBotones;
+                }
+                &:checked {
+                background-color: $colorBotones;
+                border-color: $colorBotones;
+                box-shadow: none;
+                }
+            }
+
+            @include pantallaGrande {
+                font-size: 1rem;
+
+                .form-check {
+                    margin: 2% 0% 2% 0%;
+                }
+            }
+        }
+
+        @include pantallaPanoramica {
+            margin-bottom: 2%;
+        }
+    }
+
+    @include celularHorizontal {
+        margin: 0% 0% 3% 1%;
+    }
+
+    @include pantallaMediana {
+        margin: 0% 0% 3% 1%;
+    }
+
+    @include pantallaGrande {
+        margin: 0% 0% 3% 1%;
+    }
+
+    @include pantallaPanoramica {
+        margin: 0% 0% 3% 1%;
+    }
+}

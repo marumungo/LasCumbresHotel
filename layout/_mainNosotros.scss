@@ -1,0 +1,42 @@
+// MAIN NOSOTROS
+main {
+    .nosotros {
+        margin: 3% 3% 3% 0%;
+        display: grid;
+        grid-template-areas: 
+        "imagenNosotros textoNosotros";
+
+        img {
+            width: 100%;
+            grid-area: imagenNosotros;
+        }
+
+        .textoNosotros {
+            margin-left: 10%;
+            width: 90%;
+            grid-area: textoNosotros;
+
+            h2 {
+                font-family: $tipografiaTitulos;
+                font-size: 2.5rem;
+                margin-bottom: 7%;
+            }
+
+            p {
+                font-family: $tipografiaTextos;
+                text-align: justify;
+                margin-bottom: 3%;
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                margin-top: 5%;
+                @include botones;
+
+                &:hover {
+                    background-color: $colorBotonesHover;
+                }
+            }
+        }
+    }
+}

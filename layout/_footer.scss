@@ -1,0 +1,59 @@
+// FOOTER
+footer {
+    background-color: $colorFondoFooter;
+    padding: 3%;
+
+    .footer {
+        display: grid;
+        grid-template-areas: 
+        "contactanos redesSociales mediosDePago";
+        justify-content: space-around;
+
+        .contactanos {
+            grid-area: contactanos;
+        }
+
+        .redesSociales {
+            grid-area: redesSociales;
+        }
+
+        .mediosDePago {
+            grid-area: mediosDePago;
+
+            i {
+                margin: 0% 5% 0% 5%;
+
+                &:hover {
+                    color: $fondoQueNosDiferencia3;
+                }
+            }
+        }
+
+        .distribucionFooter {
+            h2 {
+                font-family: $tipografiaTitulos;
+                margin-bottom: 10%;
+                color: $colorLetrasFooter;
+            }
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+
+                i {
+                    color: $colorLetrasFooter;
+
+                    &:hover {
+                        color: $fondoQueNosDiferencia3;
+                    }
+                }
+
+                p {
+                    font-family: $tipografiaTextos;
+                    margin-left: 10%;
+                    color: $colorLetrasFooter;
+                }
+            }
+        }
+    }
+}

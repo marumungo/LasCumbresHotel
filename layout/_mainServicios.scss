@@ -1,0 +1,153 @@
+// MAIN SERVICIOS
+main {
+    .servicios {
+        margin: -30% 10% 10% 10%;
+        display: grid;
+        grid-template-areas: 
+        "servicioTexto servicioResumen";
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+
+        .servicioTexto {
+            grid-area: servicioTexto;
+
+            h2 {
+                font-family: $tipografiaTitulos;
+                color: $letrasServiciosFoto;
+                font-size: 3rem;
+            }
+
+            p {
+                font-family: $tipografiaTextos;
+                color: $letrasServiciosFoto;
+                font-size: 1.3rem;
+            }
+        }
+        .serviciosResumen {
+            grid-area: servicioResumen;
+            display: grid;
+            grid-template-areas: 
+            "servicio1 servicio2"
+            "servicio3 servicio4";
+            margin-left: 10%;
+            color: $letrasServiciosFoto;
+
+            .servicio1 {
+                grid-area: servicio1;
+            }
+            .servicio2 {
+                grid-area: servicio2;
+            }
+            .servicio3 {
+                grid-area: servicio3;
+            }
+            .servicio4 {
+                grid-area: servicio4;
+            }
+
+            .servicio1, .servicio2, .servicio3, .servicio4 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: $tipografiaTextos;
+                background-color: $fondoQueNosDiferencia3;
+                padding: 10% 30% 10% 30%;
+                width: 100%;
+            }
+
+            i {
+                margin-bottom: 20%;
+                &:hover {
+                    color: $iconosHover;
+                }
+            }
+
+        }
+    }
+
+    .serviciosHabitaciones {
+        margin-top: 16%;
+        display: grid;
+        grid-template-areas: 
+        "tituloServicioHabitaciones tituloServicioHabitaciones tituloServicioHabitaciones"
+        "servicioHabitacion         servicioHabitacion         servicioHabitacion";
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+
+        h2 {
+            grid-area: tituloServicioHabitaciones;
+            font-family: $tipografiaTitulos;
+        }
+
+        div {
+            width: 100%;
+            margin: 3% 3% 3% 10%;
+            grid-area: servicioHabitacion;
+            display: grid;
+            grid-template-areas: 
+            "servicioHabitacion1 servicioHabitacion2 servicioHabitacion3"
+            "servicioHabitacion4 servicioHabitacion5 servicioHabitacion6";
+            font-family: $tipografiaTextos;
+            justify-items: space-evenly;
+
+            .servicioHabitacion1 {
+                grid-area: servicioHabitacion1;
+            }
+            .servicioHabitacion2 {
+                grid-area: servicioHabitacion2;
+            }
+            .servicioHabitacion3 {
+                grid-area: servicioHabitacion3;
+            }
+            .servicioHabitacion4 {
+                grid-area: servicioHabitacion4;
+            }
+            .servicioHabitacion5 {
+                grid-area: servicioHabitacion5;
+            }
+            .servicioHabitacion6 {
+                grid-area: servicioHabitacion6;
+            }
+        }
+    }
+
+    .serviciosHabitacionesHotel {
+        margin: 5% 0% 3% 0%;
+        div {
+            margin-right: 8%;
+        }
+    }
+
+    .serviciosGaleria {
+        display: grid;
+        grid-template-areas: 
+        "tituloGaleria"
+        "imagenesGaleria";
+        justify-items: center;
+        align-items: center;
+
+        h2 {
+            grid-area: tituloGaleria;
+            font-family: $tipografiaTitulos;
+            margin-bottom: 3%;
+        }
+
+        div {
+            margin: 0% 5% 0% 12%;
+            width: 100%;
+            grid-area: imagenesGaleria;
+            display: grid;
+            grid-template-areas: 
+            "imagenesGaleria imagenesGaleria imagenesGaleria"
+            "imagenesGaleria imagenesGaleria imagenesGaleria";
+            justify-items: space-evenly;
+
+            img {
+                grid-area: imagenesGaleria;
+                width: 80%;
+                margin-bottom: 20%;
+            }
+        }
+    }
+}

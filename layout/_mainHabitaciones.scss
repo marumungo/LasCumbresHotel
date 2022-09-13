@@ -1,0 +1,145 @@
+// MAIN HABITACIONES
+main {
+    .todasHabitaciones {
+        display: flex;
+        flex-direction: column;
+
+        .habitaciones {
+            margin: -20% 10% 0% 10%;
+            padding: 6% 0% 0% 10%;
+            display: grid;
+            grid-template-areas: 
+            "img habitacionTexto";
+            background-color: white;
+
+            img {
+                width: 55%;
+                margin-right: 10%;
+                grid-area: img;
+            }
+
+            .habitacionTexto {
+                z-index: 1;
+                grid-area: habitacionTexto;
+                background-color: white;
+                margin-left: -70%;
+
+                h2 {
+                    font-family: $tipografiaTitulos;
+                    margin-bottom: 5%;
+                }
+
+                p {
+                    font-family: $tipografiaTextos;
+                    margin-bottom: 5%;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+
+                    div {
+                        margin-right: 10%;
+                        display: flex;
+                        align-items: baseline;
+                        margin-bottom: 5%;
+
+                        p {
+                            font-family: $tipografiaTextos;
+                        }
+                    }
+                }
+
+                .btn {    
+                    @include botones;
+                    font-size: 1.2rem;
+    
+                    &:hover {
+                        background-color: $colorBotonesHover;
+                    }
+                }
+            }
+        }
+
+        .habitaciones2 {
+            margin: 5% 10% 0% 10%;
+            padding: 0% 0% 0% 10%;
+            display: grid;
+            grid-template-areas: 
+            "img habitacionTexto";
+
+            img {
+                width: 45%;
+                margin-right: 10%;
+                grid-area: img;
+            }
+
+            .habitacionTexto {
+                z-index: 1;
+                grid-area: habitacionTexto;
+                background-color: white;
+                margin-left: -195%;
+
+                h2 {
+                    font-family: $tipografiaTitulos;
+                    margin-bottom: 5%;
+                }
+
+                p {
+                    font-family: $tipografiaTextos;
+                    margin-bottom: 5%;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+
+                    div {
+                        margin-right: 10%;
+                        display: flex;
+                        align-items: baseline;
+                        margin-bottom: 5%;
+
+                        p {
+                            font-family: $tipografiaTextos;
+                        }
+                    }
+                }
+
+                .btn {    
+                    @include botones;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        background-color: $colorBotonesHover;
+                    }
+                }
+            }
+        }
+        
+
+        .boton {
+            display: flex;
+            justify-content: center;
+            margin: 3% 0% 3% 0%;
+
+            .btn {    
+                @include botones;
+                font-size: 1.7rem;
+
+                &:hover {
+                    background-color: $colorBotonesHover;
+                }
+            }
+        }
+
+        #operacionExitosa {
+            h2 {
+                margin: 0% 0% 0% 13%;
+                font-family: $tipografiaTextos;
+                font-size: 1.3rem;
+                color: green;
+            }
+        }
+    }
+}
