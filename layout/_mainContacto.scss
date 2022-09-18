@@ -69,6 +69,15 @@
                 }
             }
 
+            #datosEnviados {
+                h2 {
+                    margin: 0% 0% 0% 13%;
+                    font-family: $tipografiaTextos;
+                    font-size: 1.3rem;
+                    color: green;
+                }
+            }
+
             @include pantallaGrande {
                 font-size: 1rem;
 
