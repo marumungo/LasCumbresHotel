@@ -41,6 +41,10 @@
                 background-color: $colorBotones;
                 font-size: 0.8rem;
 
+                &:hover {
+                    background-color: $colorBotonesHover;
+                }
+
                 @include pantallaGrande {
                     font-size: 1rem;
                 }
@@ -48,6 +52,11 @@
 
             .btn-primary {
                 border: none;
+                
+                &:focus {
+                    border-color: $colorBotones;
+                    box-shadow: none;
+                }
             }
 
             .form-control {
@@ -71,10 +80,19 @@
 
             #datosEnviados {
                 h2 {
-                    margin: 0% 0% 0% 13%;
+                    margin: 2% 0% 0% 0%;
                     font-family: $tipografiaTextos;
-                    font-size: 1.3rem;
+                    font-size: 1rem;
                     color: green;
+                }
+            }
+
+            #reviseDatos {
+                h2 {
+                    margin: 2% 0% 0% 0%;
+                    font-family: $tipografiaTextos;
+                    font-size: 1rem;
+                    color: red;
                 }
             }
 

@@ -1,68 +1,50 @@
 // FORMULARIO
 
-// PRIMER INTENTO
-// let botonEnviar = document.getElementById ("botonEnviar");
+let botonEnviar = document.getElementById ("formulario");
 
-// botonEnviar.addEventListener ("submit", (e) => {
-//     e.preventDefault ();
+let datosContacto = [];
 
-//     const agregarStorage = (nombre, apellido, email, telefono, texto) => {
-//         let datosContacto = JSON.parse (localStorage.getItem ("datosContacto"));
-//         let info = {
-//             nombre: nombre,
-//             apellido: apellido,
-//             email: email,
-//             telefono: telefono,
-//             texto: texto
-//         };
+botonEnviar.addEventListener ("submit", (e) => {
+    e.preventDefault ();
 
-//         datosContacto.push (info);
-//         localStorage.setItem ("datosContacto", JSON.stringify(datosContacto));
-//     }
+    const agregarStorage = (nombre, apellido, email, telefono, texto) => {
+        if (localStorage.getItem('datosContacto')) {
+            datosContacto = JSON.parse(localStorage.getItem("datosContacto"));
+        }else {
+            localStorage.setItem('datosContacto', JSON.stringify(datosContacto))
+        }
 
-//     let nombre = document.getElementById ("inputNombre").value;
-//     let apellido = document.getElementById ("inputApellido").value;
-//     let email = document.getElementById ("inputEmail").value;
-//     let telefono = document.getElementById ("inputTelefono").value;
-//     let texto = document.getElementById ("inputTexto").value;
+        let info = {
+            nombre: nombre,
+            apellido: apellido,
+            email: email,
+            telefono: telefono,
+            texto: texto
+        };
 
-//     agregarStorage (nombre, apellido, email, telefono, texto);
-// })
+        datosContacto.push(info);
+        localStorage.setItem("datosContacto", JSON.stringify(datosContacto));
+    }
 
+    let nombre = document.getElementById ("inputNombre").value;
+    let apellido = document.getElementById ("inputApellido").value;
+    let email = document.getElementById ("inputEmail").value;
+    let telefono = document.getElementById ("inputTelefono").value;
+    let texto = document.getElementById ("inputTexto").value;
 
-// SEGUNDO INTENTO
-// let botonEnviar = document.getElementById ("botonEnviar");
+    if (nombre === "" || apellido === "" || email === "" || telefono === "" || texto === "") {
+        let contenedor = document.getElementById ("reviseDatos");
+        contenedor.innerHTML = "";
+        let div = document.createElement ("div");
+        div.innerHTML = "<h2> * Revise los datos ingresados </h2>";
+        contenedor.append (div);
+    }else {
+        agregarStorage (nombre, apellido, email, telefono, texto);
 
-// botonEnviar.addEventListener ("submit", (e) => {
-//     e.preventDefault ();
-
-//     class Datos {
-//         constructor (nombre, apellido, email, telefono, texto) {
-//             this.nombre = nombre;
-//             this.apellido = apellido;
-//             this.edad = edad;
-//             this.email = email;
-//             this.telefono = telefono;
-//             this.texto = texto;
-//         }
-//     }
-
-//     const datosContacto = [];
-
-//     let nombre = document.getElementById ("inputNombre").value;
-//     let apellido = document.getElementById ("inputApellido").value;
-//     let email = document.getElementById ("inputEmail").value;
-//     let telefono = document.getElementById ("inputTelefono").value;
-//     let texto = document.getElementById ("inputTexto").value;
-
-//     agregarStorage (nombre, apellido, email, telefono, texto);
-
-//     let obj = new Datos (nombre, apellido, email, telefono, texto);
-//     datosContacto.push (obj);
-
-//     localStorage.setItem ("datosContacto", JSON.stringify (datosContacto));
-//     let datos = JSON.parse (localStorage.getItem ("datos"));
-// })
-
-
-
+        let contenedor = document.getElementById ("datosEnviados");
+        contenedor.innerHTML = "";
+        let div = document.createElement ("div");
+        div.innerHTML = "<h2> Los datos fueron enviados con éxito! </h2>";
+        contenedor.append (div);
+    }
+})

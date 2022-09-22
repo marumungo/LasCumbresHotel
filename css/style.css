@@ -867,6 +867,10 @@ main .padreProductos .detalleProducto .btn:focus {
   font-size: 0.8rem;
 }
 
+.preguntas_contacto .contactoGrupo form .btn:hover {
+  background-color: #769FCD;
+}
+
 @media (min-width: 992px) {
   .preguntas_contacto .contactoGrupo form .btn {
     font-size: 1rem;
@@ -875,6 +879,11 @@ main .padreProductos .detalleProducto .btn:focus {
 
 .preguntas_contacto .contactoGrupo form .btn-primary {
   border: none;
+}
+
+.preguntas_contacto .contactoGrupo form .btn-primary:focus {
+  border-color: #B9D7EA;
+  box-shadow: none;
 }
 
 .preguntas_contacto .contactoGrupo form .form-control:focus {
@@ -891,6 +900,20 @@ main .padreProductos .detalleProducto .btn:focus {
   background-color: #B9D7EA;
   border-color: #B9D7EA;
   box-shadow: none;
+}
+
+.preguntas_contacto .contactoGrupo form #datosEnviados h2 {
+  margin: 2% 0% 0% 0%;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  color: green;
+}
+
+.preguntas_contacto .contactoGrupo form #reviseDatos h2 {
+  margin: 2% 0% 0% 0%;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  color: red;
 }
 
 @media (min-width: 992px) {
