@@ -102,11 +102,13 @@ function dibujarCarrito() {
         valorInicial
     );
 
-    if(elementosCarrito.length == 0) {
-        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
-    } else {
-        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: $${totalCompora}</th>`;
-    }
+    // if(elementosCarrito.length == 0) {
+    //     contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
+    // } else {
+    //     contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: $${totalCompora}</th>`;
+    // }
+
+    elementosCarrito.length == 0 ? contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>` : contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: $${totalCompora}</th>`;
 }
 
 function removerProductoCarrito(elementoAEliminar) {

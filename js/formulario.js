@@ -8,11 +8,13 @@ botonEnviar.addEventListener ("submit", (e) => {
     e.preventDefault ();
 
     const agregarStorage = (nombre, apellido, email, telefono, texto) => {
-        if (localStorage.getItem('datosContacto')) {
-            datosContacto = JSON.parse(localStorage.getItem("datosContacto"));
-        }else {
-            localStorage.setItem('datosContacto', JSON.stringify(datosContacto))
-        }
+        // if (localStorage.getItem('datosContacto')) {
+        //     datosContacto = JSON.parse(localStorage.getItem("datosContacto"));
+        // }else {
+        //     localStorage.setItem('datosContacto', JSON.stringify(datosContacto))
+        // }
+
+        localStorage.getItem('datosContacto') ? datosContacto = JSON.parse(localStorage.getItem("datosContacto")) : localStorage.setItem('datosContacto', JSON.stringify(datosContacto));
 
         let info = {
             nombre: nombre,
