@@ -142,4 +142,123 @@ main {
             }
         }
     }
+
+    .serviciosAdicionales {
+        margin: 0% 3% 3% 3%;
+
+        h2 {
+            font-family: $tipografiaTitulos;
+            display: flex;
+            justify-content: center;
+            grid-area: serviciosAdicionales;
+        }
+
+        .cardsServicios {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            .card {
+                margin: 3%;
+                grid-area: card;
+                display: flex;
+                align-items: flex-start;
+
+                .card-body { 
+                    margin-left: -5%;                   
+                    h5 {
+                        font-family: $tipografiaTextos;
+                        font-weight: bolder;
+                        margin-bottom: 5%;
+                    }
+
+                    h6 {
+                        font-family: $tipografiaTextos;
+                        font-weight: bolder;
+                        font-size: 1.1rem;
+                        margin-bottom: 5%;
+                    }
+
+                    p {
+                        font-family: $tipografiaTextos;
+                    }
+
+                    .btn {    
+                        @include botones;
+                        font-size: 1rem;
+        
+                        &:hover {
+                            background-color: $colorBotonesHover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #botonVerCarrito {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3%;
+
+        .btn {    
+            @include botones;
+            font-size: 1.7rem;
+
+            &:hover {
+                background-color: $colorBotonesHover;
+            }
+        }
+    }
+}
+
+// MODAL
+.modal {
+    h5 {
+        font-family: $tipografiaTitulos;
+    }
+    tr {
+        font-family: $tipografiaTextos;
+
+        .total {
+            width: 750%;
+        }
+    }
+
+    .btn {
+        @include botones;
+
+        &:hover {
+            background-color: $colorBotonesHover;
+        }
+    }
+
+    .modal-content {
+        width: 110%;
+    }
+}
+
+// SWAL 
+.swal-button:not([disabled]):hover {
+    background-color: $color3;
+}
+.swal-icon--success__ring {
+    border-color: $color3;
+}
+.swal-icon--success__line {
+    background-color: $color4;
+}
+.swal-title {
+    font-family: $tipografiaTextos;
+}
+.swal-text {
+    @extend .swal-title;
+}
+.swal-button {
+    @include botones;
+
+        &:hover {
+            background-color: $colorBotonesHover;
+        }
 }
