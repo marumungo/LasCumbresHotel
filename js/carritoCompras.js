@@ -69,7 +69,8 @@ const traerDatos = async () => {
 
         div.append (p); 
     }
-}
+};
+traerDatos ();
 
 function cargarCarrito() {
 }
