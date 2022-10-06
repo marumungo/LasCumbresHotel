@@ -38,19 +38,37 @@ cargarCarrito();
 dibujarCarrito();
 dibujarCatalogoProductos();
 
-/**
- * Definiciones de funciones
- */
+// Definiciones de funciones
 
-function cargarProductos() {
-    productos.push(new Producto(1, "Masajista", 2000, "../../images/serviciosMasajista.jpg", "Contamos con un servicio de masajistas profesionales de 8:00 a 16:00, todos los días"));
-    productos.push(new Producto(2, "Gimnasio", 1500, "../../images/serviciosGimnasio.jpg", "Tenemos una sala de máquinas, para que puedas realizar los ejercicios que gustes"));
-    productos.push(new Producto(3, "Sauna", 4000, "../../images/serviciosSauna.jpg", "Poseemos un sauna en nuestro último piso, que está habilitado las 24 horas del día"));
-    productos.push(new Producto(4, "Computadoras", 800, "../../images/serviciosComputadoras.jpg", "Nuestro hotel cuenta con una sala de computadoras, para que utilices en caso de necesitarlas"));
-    productos.push(new Producto(5, "Guía turístico", 4000, "../../images/serviciosGuiaTuristico.jpg", "Paquete exclusivo de excursiones (todo pago) por 7 días seguidos, junto con guías especializados"));
-    productos.push(new Producto(6, "Restaurante", 8000, "../../images/serviciosRestaurante.jpg", "Cena libre en nuestro restaurante, incluida por 7 días (precio por persona)"));
-    productos.push(new Producto(7, "Teatro", 5400, "../../images/serviciosTeatro.jpg", "Obras de teatro incluidas durante una estadía de 7 días (precio por persona)"));
-    productos.push(new Producto(8, "Sala de juegos", 3000, "../../images/serviciosSalaDeJuegos.jpg", "Acceso libre a nuestro rincón de juegos, incluyendo ping pong, pool, juegos electrónicos, etc."));
+// function cargarProductos() {
+//     productos.push(new Producto(1, "Masajista", 2000, "../../images/serviciosMasajista.jpg", "Contamos con un servicio de masajistas profesionales de 8:00 a 16:00, todos los días"));
+//     productos.push(new Producto(2, "Gimnasio", 1500, "../../images/serviciosGimnasio.jpg", "Tenemos una sala de máquinas, para que puedas realizar los ejercicios que gustes"));
+//     productos.push(new Producto(3, "Sauna", 4000, "../../images/serviciosSauna.jpg", "Poseemos un sauna en nuestro último piso, que está habilitado las 24 horas del día"));
+//     productos.push(new Producto(4, "Computadoras", 800, "../../images/serviciosComputadoras.jpg", "Nuestro hotel cuenta con una sala de computadoras, para que utilices en caso de necesitarlas"));
+//     productos.push(new Producto(5, "Guía turístico", 4000, "../../images/serviciosGuiaTuristico.jpg", "Paquete exclusivo de excursiones (todo pago) por 7 días seguidos, junto con guías especializados"));
+//     productos.push(new Producto(6, "Restaurante", 8000, "../../images/serviciosRestaurante.jpg", "Cena libre en nuestro restaurante, incluida por 7 días (precio por persona)"));
+//     productos.push(new Producto(7, "Teatro", 5400, "../../images/serviciosTeatro.jpg", "Obras de teatro incluidas durante una estadía de 7 días (precio por persona)"));
+//     productos.push(new Producto(8, "Sala de juegos", 3000, "../../images/serviciosSalaDeJuegos.jpg", "Acceso libre a nuestro rincón de juegos, incluyendo ping pong, pool, juegos electrónicos, etc."));
+// }
+
+const traerDatos = async () => {
+    try {
+        const response = await fetch ("./data.json");
+        const data = await response.json();
+
+        data.forEach (producto => {function cargarProductos () {
+            productos.push (new Producto (producto));     
+        }
+        cargarProductos();
+        });
+
+    }catch (error) {
+        const div = document.getElementById ("error")
+        const p = document.createElement ("p")
+        p.innerhtml = `<p> Ups... Algo salió mal </p>`
+
+        div.append (p); 
+    }
 }
 
 function cargarCarrito() {
@@ -119,7 +137,9 @@ function removerProductoCarrito(elementoAEliminar) {
 }
 
 function crearCard(producto) {
+    // DESESTRUCTURACION 
     let {id, nombre, precio, foto, descripcion} = producto;
+
     //Botón
     let botonAgregar = document.createElement("button");
     botonAgregar.className = "btn btn-success";

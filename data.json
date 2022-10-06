@@ -1,0 +1,10 @@
+[
+    {"id":1, "nombre": "Masajista", "precio": 2000, "foto": "../../images/serviciosMasajista.jpg", "descripcion": "Contamos con un servicio de masajistas profesionales de 8:00 a 16:00, todos los días"},
+    {"id":2, "nombre": "Gimnasio", "precio": 1500, "foto": "../../images/serviciosGimnasio.jpg", "descripcion": "Tenemos una sala de máquinas, para que puedas realizar los ejercicios que gustes"},
+    {"id":3, "nombre": "Sauna", "precio": 4000, "foto": "../../images/serviciosSauna.jpg", "descripcion": "Poseemos un sauna en nuestro último piso, que está habilitado las 24 horas del día"},
+    {"id":4, "nombre": "Computadoras", "precio": 800, "foto": "../../images/serviciosComputadoras.jpg", "descripcion": "Nuestro hotel cuenta con una sala de computadoras, para que utilices en caso de necesitarlas"},
+    {"id":5, "nombre": "Guía turístico", "precio": 4000, "foto": "../../images/serviciosGuiaTuristico.jpg", "descripcion": "Paquete exclusivo de excursiones (todo pago) por 7 días seguidos, junto con guías especializados"},
+    {"id":6, "nombre": "Restaurante", "precio": 8000, "foto": "../../images/serviciosRestaurante.jpg", "descripcion": "Cena libre en nuestro restaurante, incluida por 7 días (precio por persona)"},
+    {"id":7, "nombre": "Teatro", "precio": 5400, "foto": "../../images/serviciosTeatro.jpg", "descripcion": "Obras de teatro incluidas durante una estadía de 7 días (precio por persona)"},
+    {"id":8, "nombre": "Sala de juegos", "precio": 3000, "foto": "../../images/serviciosSalaDeJuegos.jpg", "descripcion": "Acceso libre a nuestro rincón de juegos, incluyendo ping pong, pool, juegos electrónicos, etc."}
+]
