@@ -125,7 +125,7 @@ main {
 
             .btn {    
                 @include botones;
-                font-size: 1.7rem;
+                font-size: 1.6rem;
 
                 &:hover {
                     background-color: $colorBotonesHover;
@@ -204,7 +204,7 @@ main {
 
         .btn {    
             @include botones;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
 
             &:hover {
                 background-color: $colorBotonesHover;

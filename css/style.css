@@ -324,11 +324,12 @@ main .nosotros .textoNosotros p {
 }
 
 main .nosotros .textoNosotros .btn {
-  margin-top: 5%;
+  margin-top: 3%;
   font-family: "Quicksand", sans-serif;
   background-color: #B9D7EA;
   border: none;
   color: white;
+  font-size: 1.3rem;
 }
 
 main .nosotros .textoNosotros .btn:hover {
@@ -618,7 +619,7 @@ main .todasHabitaciones .boton .btn {
   background-color: #B9D7EA;
   border: none;
   color: white;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 main .todasHabitaciones .boton .btn:hover {
@@ -701,7 +702,7 @@ main #botonVerCarrito .btn {
   background-color: #B9D7EA;
   border: none;
   color: white;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 main #botonVerCarrito .btn:hover {

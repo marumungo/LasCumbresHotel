@@ -7,7 +7,7 @@ class Producto {
         this.precio = precio;
         this.foto = foto;
         this.descripcion = descripcion;
-    }
+    } 
 }
 
 class ElementoCarrito {
@@ -119,6 +119,7 @@ function removerProductoCarrito(elementoAEliminar) {
 }
 
 function crearCard(producto) {
+    let {id, nombre, precio, foto, descripcion} = producto;
     //Botón
     let botonAgregar = document.createElement("button");
     botonAgregar.className = "btn btn-success";
@@ -127,18 +128,18 @@ function crearCard(producto) {
     //Card body
     let cuerpoCarta = document.createElement("div");
     cuerpoCarta.className = "card-body";
-    cuerpoCarta.innerHTML = `
-        <h5>${producto.nombre}</h5>
-        <h6>$ ${producto.precio}</h6>
-        <p>${producto.descripcion}</p>
+    cuerpoCarta.innerHTML = ` 
+        <h5>${nombre}</h5>
+        <h6>$ ${precio}</h6>
+        <p>${descripcion}</p>
     `;
     cuerpoCarta.append(botonAgregar);
 
     //Imagen
     let imagen = document.createElement("img");
-    imagen.src = producto.foto;
+    imagen.src = foto;
     imagen.className = "card-img-top";
-    imagen.alt = producto.nombre;
+    imagen.alt = nombre;
 
     //Card
     let carta = document.createElement("div");
@@ -149,7 +150,7 @@ function crearCard(producto) {
 
     botonAgregar.onclick = () => {
         let elementoExistente = 
-            elementosCarrito.find((elem) => elem.producto.id == producto.id);
+            elementosCarrito.find((elem) => elem.id == id);
         
         if(elementoExistente) {
             elementoExistente.cantidad+=1;

@@ -30,8 +30,9 @@ main {
             }
 
             .btn {
-                margin-top: 5%;
+                margin-top: 3%;
                 @include botones;
+                font-size: 1.3rem;
 
                 &:hover {
                     background-color: $colorBotonesHover;
