@@ -1,14 +1,14 @@
 // CARRITO DE COMPRAS
 
-class Producto {
-    constructor(id, nombre, precio, foto, descripcion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.foto = foto;
-        this.descripcion = descripcion;
-    } 
-}
+// class Producto {
+//     constructor(id, nombre, precio, foto, descripcion) {
+//         this.id = id;
+//         this.nombre = nombre;
+//         this.precio = precio;
+//         this.foto = foto;
+//         this.descripcion = descripcion;
+//     } 
+// }
 
 class ElementoCarrito {
     constructor(producto, cantidad) {
@@ -58,7 +58,8 @@ const traerDatos = async () => {
 
         data.forEach (producto => {
             let {id, nombre, precio, foto, descripcion} = producto;
-            productos.push (new Producto (id, nombre, precio, foto, descripcion));     
+            productos.push (producto);
+            // productos.push (new Producto (id, nombre, precio, foto, descripcion));     
             
             dibujarCatalogoProductos();
         });
