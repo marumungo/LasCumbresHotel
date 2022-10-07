@@ -33,12 +33,10 @@ const contenedorFooterCarrito = document.querySelector("#footer");
  * Ejecución de funciones
  */
 
-cargarProductos();
+// cargarProductos();
 cargarCarrito();
 dibujarCarrito();
 dibujarCatalogoProductos();
-
-// Definiciones de funciones
 
 // function cargarProductos() {
 //     productos.push(new Producto(1, "Masajista", 2000, "../../images/serviciosMasajista.jpg", "Contamos con un servicio de masajistas profesionales de 8:00 a 16:00, todos los días"));
@@ -51,19 +49,22 @@ dibujarCatalogoProductos();
 //     productos.push(new Producto(8, "Sala de juegos", 3000, "../../images/serviciosSalaDeJuegos.jpg", "Acceso libre a nuestro rincón de juegos, incluyendo ping pong, pool, juegos electrónicos, etc."));
 // }
 
+// Traer datos del data.json
+
 const traerDatos = async () => {
     try {
-        const response = await fetch ("./data.json");
+        const response = await fetch ("../data.json");
         const data = await response.json();
 
-        data.forEach (producto => {function cargarProductos () {
-            productos.push (new Producto (producto));     
-        }
-        cargarProductos();
+        data.forEach (producto => {
+            let {id, nombre, precio, foto, descripcion} = producto;
+            productos.push (new Producto (id, nombre, precio, foto, descripcion));     
+            
+            dibujarCatalogoProductos();
         });
 
     }catch (error) {
-        const div = document.getElementById ("error")
+        const div = document.getElementById ("errorFetch")
         const p = document.createElement ("p")
         p.innerhtml = `<p> Ups... Algo salió mal </p>`
 
@@ -71,6 +72,8 @@ const traerDatos = async () => {
     }
 };
 traerDatos ();
+
+// Definiciones de funciones
 
 function cargarCarrito() {
 }
