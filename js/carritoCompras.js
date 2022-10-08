@@ -225,3 +225,76 @@ function dibujarCatalogoProductos() {
         }
     );
 }
+
+// FINALIZAR COMPRA 
+let botonFinalizar = document.getElementById ("formularioHabitaciones");
+let datosReserva = [];
+
+botonFinalizar.addEventListener ("submit", (e) => {
+    e.preventDefault ();
+
+    const agregarStorage = (nombreApellido, email, telefono, cantidadHuesped, fechaInicio, fechaSalida) => {
+
+        localStorage.getItem('datosReserva') ? datosContacto = JSON.parse(localStorage.getItem("datosReserva")) : localStorage.setItem('datosReserva', JSON.stringify(datosContacto));
+
+        let info = {
+            nombreApellido: nombreApellido,
+            email: email,
+            telefono: telefono,
+            cantidadHuesped: cantidadHuesped,
+            fechaInicio: fechaInicio,
+            fechaSalida: fechaSalida
+        };
+
+        datosContacto.push(info);
+        localStorage.setItem("datosReserva", JSON.stringify(datosContacto));
+    }
+
+    let nombreHuesped = document.getElementById ("inputNombreApellido").value;
+    let emailHuesped = document.getElementById ("inputEmailHabitacion").value;
+    let telefonoHuesped = document.getElementById ("inputTelefonoHabitacion").value;
+    let cantidadHuesped = document.getElementById ("inputCantidadHuesped").value;
+    let fechaInicio = document.getElementById ("fechaInicio");
+    let fechaSalida = document.getElementById ("fechaSalida");
+
+    const idHabitaciones = elementosCarrito.some (elem => elem.id == 1 || elem.id == 2 || elem.id == 3 || elem.id == 4);
+
+    if (idHabitaciones && nombreHuesped !== "" && emailHuesped !== "" && telefonoHuesped !== "") {
+        agregarStorage (nombreApellido, email, telefono, cantidadHuesped, fechaInicio, fechaSalida);
+
+        swal({
+            title: 'Compra realizada con éxito!',
+            icon: 'success',
+            buttons: {
+                cerrar: {
+                    text: "Cerrar",
+                    value: false,
+                    color: "#769FCD"
+                }
+            }
+        });
+    } else if (!idHabitaciones){
+
+        let contenedor1 = document.getElementById ("reviseHabitaciones");
+        contenedor1.innerHTML = "";
+        let div = document.createElement ("div");
+        div.innerHTML = "<h2> * Debe agregar al menos una habitacion! </h2>";
+        contenedor1.appendChild (div);
+
+    } else if (nombreHuesped === "" || emailHuesped === "" || telefonoHuesped === "") {
+
+        let contenedor2 = document.getElementById ("reviseDatosHabitaciones");
+        contenedor2.innerHTML = "";
+        let div = document.createElement ("div");
+        div.innerHTML = "<h2> * Falta completar datos! </h2>";
+        contenedor2.appendChild (div);
+
+    } else if (cantidadHuesped > 4) {
+
+        let contenedor3 = document.getElementById ("reviseDatosCantidad");
+        contenedor3.innerHTML = "";
+        let div = document.createElement ("div");
+        div.innerHTML = "<h2> * No deben ser más de 4 huéspedes! </h2>";
+        contenedor3.appendChild (div);
+    }
+})

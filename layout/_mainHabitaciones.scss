@@ -69,7 +69,119 @@ main {
             "img habitacionTexto";
 
             img {
-                width: 45%;
+                width: 55%;
+                margin-right: 10%;
+                grid-area: img;
+            }
+
+            .habitacionTexto {
+                z-index: 1;
+                grid-area: habitacionTexto;
+                background-color: white;
+                margin-left: -70%;
+
+                h2 {
+                    font-family: $tipografiaTitulos;
+                    margin-bottom: 5%;
+                }
+
+                p {
+                    font-family: $tipografiaTextos;
+                    margin-bottom: 5%;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+
+                    div {
+                        margin-right: 10%;
+                        display: flex;
+                        align-items: baseline;
+                        margin-bottom: 5%;
+
+                        p {
+                            font-family: $tipografiaTextos;
+                        }
+                    }
+                }
+
+                .btn {    
+                    @include botones;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        background-color: $colorBotonesHover;
+                    }
+                }
+            }
+        }
+
+        .habitaciones3 {
+            margin: 5% 10% 0% 10%;
+            padding: 0% 0% 0% 10%;
+            display: grid;
+            grid-template-areas: 
+            "img habitacionTexto";
+
+            img {
+                width: 57%;
+                margin-right: 10%;
+                grid-area: img;
+            }
+
+            .habitacionTexto {
+                z-index: 1;
+                grid-area: habitacionTexto;
+                background-color: white;
+                margin-left: -57%;
+
+                h2 {
+                    font-family: $tipografiaTitulos;
+                    margin-bottom: 5%;
+                }
+
+                p {
+                    font-family: $tipografiaTextos;
+                    margin-bottom: 5%;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+
+                    div {
+                        margin-right: 10%;
+                        display: flex;
+                        align-items: baseline;
+                        margin-bottom: 5%;
+
+                        p {
+                            font-family: $tipografiaTextos;
+                        }
+                    }
+                }
+
+                .btn {    
+                    @include botones;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        background-color: $colorBotonesHover;
+                    }
+                }
+            }
+        }
+
+        .habitaciones4 {
+            margin: 5% 10% 0% 10%;
+            padding: 0% 0% 0% 10%;
+            display: grid;
+            grid-template-areas: 
+            "img habitacionTexto";
+
+            img {
+                width: 45.5%;
                 margin-right: 10%;
                 grid-area: img;
             }
@@ -116,41 +228,24 @@ main {
                 }
             }
         }
-        
-
-        .boton {
-            display: flex;
-            justify-content: center;
-            margin: 3% 0% 3% 0%;
-
-            .btn {    
-                @include botones;
-                font-size: 1.6rem;
-
-                &:hover {
-                    background-color: $colorBotonesHover;
-                }
-            }
-        }
-
-        #operacionExitosa {
-            h2 {
-                margin: 0% 0% 0% 13%;
-                font-family: $tipografiaTextos;
-                font-size: 1.3rem;
-                color: green;
-            }
-        }
     }
 
     .serviciosAdicionales {
-        margin: 0% 3% 3% 3%;
+        margin: 5% 3% 3% 3%;
 
         h2 {
             font-family: $tipografiaTitulos;
             display: flex;
             justify-content: center;
             grid-area: serviciosAdicionales;
+        }
+
+        h3 {
+            margin-top: 1%;
+            font-family: $tipografiaTextos;
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
         }
 
         .cardsServicios {
@@ -197,17 +292,61 @@ main {
         }
     }
 
-    #botonVerCarrito {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 3%;
+    .formDatos {
+        display: grid;
+        justify-content: space-evenly;
+        margin: 0% 9% 0% 9%;
 
-        .btn {    
-            @include botones;
-            font-size: 1.6rem;
+        .formularioHuesped {
 
-            &:hover {
-                background-color: $colorBotonesHover;
+            .datosPersonales {
+                font-family: $tipografiaTitulos;
+                font-weight: bold;
+                font-size: 1.5rem;
+                margin-bottom: 2%;
+            }
+
+            div {
+                font-family: $tipografiaTextos;
+            }
+
+            .calendario {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    margin-bottom: 1%;
+                }
+            }
+
+            .botones {
+                display: flex;
+                flex-direction: row;
+                margin: 2% 0% 0% 0%;
+
+                #botonFinalizar, #botonVerCarrito {
+                    display: flex;
+                    justify-content: center;
+                    margin-right: 3%;
+
+                    .btn {    
+                        @include botones;
+                        font-size: 1.3rem;
+            
+                        &:hover {
+                            background-color: $colorBotonesHover;
+                        }
+                    }
+                }
+            }
+
+            #reviseHabitaciones, #reviseDatosHabitaciones, #reviseDatosCantidad {
+                h2 {
+                    font-family: $tipografiaTextos;
+                    font-weight: lighter;
+                    color: red;
+                    font-size: 1rem;
+                }
             }
         }
     }

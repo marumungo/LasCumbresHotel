@@ -89,7 +89,7 @@
                 </picture>
                 <div class="habitacionTexto">
                     <h2>Habitación Estandard</h2>
-                    <p><strong>$5.000 / noche</strong></p>
+                    <p><strong>$15.000 / noche</strong></p>
                     <div>
                         <div>
                             <i class="fa-solid fa-user-group"></i>
@@ -111,12 +111,73 @@
 
             <div class="habitaciones2">
                 <picture>
-                    <source media="(max-width: 320px)" srcset="../images/habitacion4(2)320.jpg">
-                    <source media="(max-width: 576px)" srcset="../images/habitacion4(2)576.jpg">
-                    <source media="(max-width: 768px)" srcset="../images/habitacion4(2)768.jpg">
-                    <source media="(max-width: 992px)" srcset="../images/habitacion4(2)992.jpg">
-                    <source media="(max-width: 1200px)" srcset="../images/habitacion4(2)1200.jpg">
-                    <img src="../images/habitacion4(2).jpg" alt="logo">
+                    <source media="(max-width: 320px)" srcset="../images/habitacion2(1)320.jpg">
+                    <source media="(max-width: 576px)" srcset="../images/habitacion2(1)576.jpg">
+                    <source media="(max-width: 768px)" srcset="../images/habitacion2(1)768.jpg">
+                    <source media="(max-width: 992px)" srcset="../images/habitacion2(1)992.jpg">
+                    <source media="(max-width: 1200px)" srcset="../images/habitacion2(1)1200.jpg">
+                    <img src="../images/habitacion2(1).jpg" alt="logo">
+                </picture>
+                <div class="habitacionTexto">
+                    <h2>Habitación Bella Vista</h2>
+                    <p><strong>$19.000 / noche</strong></p>
+                    <div>
+                        <div>
+                            <i class="fa-solid fa-user-group"></i>
+                            <i class="fa-solid fa-user-group"></i>
+                            <p>1-4 personas</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <p>42m2</p>
+                        </div>
+                    </div>
+                    <div class="verMas">
+                        <a href="./habitaciones/habitacionBellaVista.html">
+                            <button type="button" class="btn btn-outline-primary">VER MAS</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="habitaciones3">
+                <picture>
+                    <source media="(max-width: 320px)" srcset="../images/habitacion3(1)320.jpg">
+                    <source media="(max-width: 576px)" srcset="../images/habitacion3(1)576.jpg">
+                    <source media="(max-width: 768px)" srcset="../images/habitacion3(1)768.jpg">
+                    <source media="(max-width: 992px)" srcset="../images/habitacion3(1)992.jpg">
+                    <source media="(max-width: 1200px)" srcset="../images/habitacion3(1)1200.jpg">
+                    <img src="../images/habitacion3(1).jpg" alt="logo">
+                </picture>
+                <div class="habitacionTexto">
+                    <h2>Habitación Altas Nieves</h2>
+                    <p><strong>$23.000 / noche</strong></p>
+                    <div>
+                        <div>
+                            <i class="fa-solid fa-user-group"></i>
+                            <i class="fa-solid fa-user-group"></i>
+                            <p>1-4 personas</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <p>55m2</p>
+                        </div>
+                    </div>
+                    <div class="verMas">
+                        <a href="./habitaciones/habitacionAltasNieves.html">
+                            <button type="button" class="btn btn-outline-primary">VER MAS</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="habitaciones4">
+                <picture>
+                    <source media="(max-width: 320px)" srcset="../images/habitacion4(1)320.jpg">
+                    <source media="(max-width: 576px)" srcset="../images/habitacion4(1)576.jpg">
+                    <source media="(max-width: 768px)" srcset="../images/habitacion4(1)768.jpg">
+                    <source media="(max-width: 992px)" srcset="../images/habitacion4(1)992.jpg">
+                    <source media="(max-width: 1200px)" srcset="../images/habitacion4(1)1200.jpg">
+                    <img src="../images/habitacion4(1).jpg" alt="logo">
                 </picture>
                 <div class="habitacionTexto">
                     <h2>Suite de Lujo</h2>
@@ -133,23 +194,17 @@
                         </div>
                     </div>
                     <div class="verMas">
-                        <a href="./habitaciones/habitacionDeLujo.html">
+                        <a href="./habitaciones/suiteDeLujo.html">
                             <button type="button" class="btn btn-outline-primary">VER MAS</button>
                         </a>
                     </div>
                 </div>
             </div>
-
-            <div class="boton">
-                <a id="boton">
-                    <button type="button" class="btn btn-outline-primary">RESERVAR</button>
-                </a>
-                <div id="operacionExitosa"></div>
-            </div>
         </div>
 
         <div class="serviciosAdicionales">
-            <h2>SERVICIOS ADICIONALES</h2>
+            <h2>RESERVAR</h2>
+            <h3>* Seleccione al menos una habitación, y en caso de desearlo, agregue servicios adicionales</h3>
             <section class="d-flex justify-content-center mt-5">
                 <article class="container">
                     <div id="contenedor-productos" class="row row-cols-1 row-cols-md-3 g-4 cardsServicios">
@@ -168,9 +223,52 @@
             <div id="errorFetch"></div>
         </div>
 
-        <a id="botonVerCarrito">
-            <button id="toggleMyModal" type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">VER CARRITO</button>
-        </a>
+        <div class="formDatos">
+            <div class="formularioHuesped">
+                <h2 class="datosPersonales">DATOS PERSONALES</h2>
+                <form class="row g-3" id="formularioHabitaciones">
+                    <div class="col-md-12">
+                        <label for="inputNombre" class="form-label">Nombre y apellido del encargado de la reserva</label>
+                        <input type="text" class="form-control" id="inputNombreApellido">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputEmail" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="inputEmailHabitacion">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputTelefono" class="form-label">Teléfono (opcional)</label>
+                        <input type="number" class="form-control" id="inputTelefonoHabitacion">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputCantidadHuesped" class="form-label">Cantidad de huéspedes</label>
+                        <input type="number" class="form-control" id="inputCantidadHuesped">
+                    </div>
+                    <div class="col-6 calendario">
+                        <label for="start">Fecha de entrada</label>
+                        <input type="date" class="form-control" id="start fechaInicio" name="trip-start"
+                            value="2022-07-22"
+                            min="2022-01-01" max="2028-12-31">
+                    </div>
+                    <div class="col-6 calendario">
+                        <label for="start">Fecha de salida</label>
+                        <input type="date" class="form-control" id="start fechaSalida" name="trip-finish"
+                            value="2022-07-22"
+                            min="2022-01-01" max="2028-12-31">
+                    </div>
+                    <div class="col-12 botones">
+                        <a id="botonFinalizar">
+                            <button type="submit" class="btn btn-primary">FINALIZAR COMPRA</button>
+                        </a>
+                        <a id="botonVerCarrito">
+                            <button id="toggleMyModal" type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">VER CARRITO</button>
+                        </a>
+                    </div>
+                    <div id="reviseHabitaciones"></div>
+                    <div id="reviseDatosHabitaciones"></div>
+                    <div id="reviseDatosCantidad"></div>
+                </form>
+            </div>
+        </div>
 
         <!-- MODAL -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -187,12 +285,14 @@
                                     <tr>
                                         <th scope="col">Imagen</th>
                                         <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
                                         <th scope="col">Cantidad</th>
+                                        <th scope="col">Precio</th>
                                         <th scope="col">Total</th>
                                     </tr>
                                 </thead>
-                                <tbody id="items"></tbody>
+                                <tbody id="items">
+                                    <div class="resumenCompra"></div>
+                                </tbody>
                                 <tfoot>
                                     <tr id="footer">
                                         <th scope="row" colspan="6">En camino a tus mejores vacaciones...</th>
@@ -205,7 +305,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Finalizar Compra</button>
                     </div>
                 </div>
             </div>

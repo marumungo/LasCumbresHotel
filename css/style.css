@@ -558,7 +558,7 @@ main .todasHabitaciones .habitaciones2 {
 }
 
 main .todasHabitaciones .habitaciones2 img {
-  width: 45%;
+  width: 55%;
   margin-right: 10%;
   grid-area: img;
 }
@@ -567,7 +567,7 @@ main .todasHabitaciones .habitaciones2 .habitacionTexto {
   z-index: 1;
   grid-area: habitacionTexto;
   background-color: white;
-  margin-left: -195%;
+  margin-left: -70%;
 }
 
 main .todasHabitaciones .habitaciones2 .habitacionTexto h2 {
@@ -608,33 +608,124 @@ main .todasHabitaciones .habitaciones2 .habitacionTexto .btn:hover {
   background-color: #769FCD;
 }
 
-main .todasHabitaciones .boton {
-  display: flex;
-  justify-content: center;
-  margin: 3% 0% 3% 0%;
+main .todasHabitaciones .habitaciones3 {
+  margin: 5% 10% 0% 10%;
+  padding: 0% 0% 0% 10%;
+  display: grid;
+  grid-template-areas: "img habitacionTexto";
 }
 
-main .todasHabitaciones .boton .btn {
+main .todasHabitaciones .habitaciones3 img {
+  width: 57%;
+  margin-right: 10%;
+  grid-area: img;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto {
+  z-index: 1;
+  grid-area: habitacionTexto;
+  background-color: white;
+  margin-left: -57%;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 5%;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto p {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 5%;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto div {
+  display: flex;
+  flex-direction: row;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto div div {
+  margin-right: 10%;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5%;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto div div p {
+  font-family: "Quicksand", sans-serif;
+}
+
+main .todasHabitaciones .habitaciones3 .habitacionTexto .btn {
   font-family: "Quicksand", sans-serif;
   background-color: #B9D7EA;
   border: none;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
-main .todasHabitaciones .boton .btn:hover {
+main .todasHabitaciones .habitaciones3 .habitacionTexto .btn:hover {
   background-color: #769FCD;
 }
 
-main .todasHabitaciones #operacionExitosa h2 {
-  margin: 0% 0% 0% 13%;
+main .todasHabitaciones .habitaciones4 {
+  margin: 5% 10% 0% 10%;
+  padding: 0% 0% 0% 10%;
+  display: grid;
+  grid-template-areas: "img habitacionTexto";
+}
+
+main .todasHabitaciones .habitaciones4 img {
+  width: 45.5%;
+  margin-right: 10%;
+  grid-area: img;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto {
+  z-index: 1;
+  grid-area: habitacionTexto;
+  background-color: white;
+  margin-left: -195%;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 5%;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto p {
   font-family: "Quicksand", sans-serif;
-  font-size: 1.3rem;
-  color: green;
+  margin-bottom: 5%;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto div {
+  display: flex;
+  flex-direction: row;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto div div {
+  margin-right: 10%;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5%;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto div div p {
+  font-family: "Quicksand", sans-serif;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto .btn {
+  font-family: "Quicksand", sans-serif;
+  background-color: #B9D7EA;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+main .todasHabitaciones .habitaciones4 .habitacionTexto .btn:hover {
+  background-color: #769FCD;
 }
 
 main .serviciosAdicionales {
-  margin: 0% 3% 3% 3%;
+  margin: 5% 3% 3% 3%;
 }
 
 main .serviciosAdicionales h2 {
@@ -642,6 +733,14 @@ main .serviciosAdicionales h2 {
   display: flex;
   justify-content: center;
   grid-area: serviciosAdicionales;
+}
+
+main .serviciosAdicionales h3 {
+  margin-top: 1%;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
 }
 
 main .serviciosAdicionales .cardsServicios {
@@ -691,22 +790,61 @@ main .serviciosAdicionales .cardsServicios .card .card-body .btn:hover {
   background-color: #769FCD;
 }
 
-main #botonVerCarrito {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3%;
+main .formDatos {
+  display: grid;
+  justify-content: space-evenly;
+  margin: 0% 9% 0% 9%;
 }
 
-main #botonVerCarrito .btn {
+main .formDatos .formularioHuesped .datosPersonales {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 2%;
+}
+
+main .formDatos .formularioHuesped div {
+  font-family: "Quicksand", sans-serif;
+}
+
+main .formDatos .formularioHuesped .calendario {
+  display: flex;
+  flex-direction: column;
+}
+
+main .formDatos .formularioHuesped .calendario label {
+  margin-bottom: 1%;
+}
+
+main .formDatos .formularioHuesped .botones {
+  display: flex;
+  flex-direction: row;
+  margin: 2% 0% 0% 0%;
+}
+
+main .formDatos .formularioHuesped .botones #botonFinalizar, main .formDatos .formularioHuesped .botones #botonVerCarrito {
+  display: flex;
+  justify-content: center;
+  margin-right: 3%;
+}
+
+main .formDatos .formularioHuesped .botones #botonFinalizar .btn, main .formDatos .formularioHuesped .botones #botonVerCarrito .btn {
   font-family: "Quicksand", sans-serif;
   background-color: #B9D7EA;
   border: none;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
-main #botonVerCarrito .btn:hover {
+main .formDatos .formularioHuesped .botones #botonFinalizar .btn:hover, main .formDatos .formularioHuesped .botones #botonVerCarrito .btn:hover {
   background-color: #769FCD;
+}
+
+main .formDatos .formularioHuesped #reviseHabitaciones h2, main .formDatos .formularioHuesped #reviseDatosHabitaciones h2, main .formDatos .formularioHuesped #reviseDatosCantidad h2 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: lighter;
+  color: red;
+  font-size: 1rem;
 }
 
 .modal h5 {
