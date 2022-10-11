@@ -1,14 +1,14 @@
 // CARRITO DE COMPRAS
 
-// class Producto {
-//     constructor(id, nombre, precio, foto, descripcion) {
-//         this.id = id;
-//         this.nombre = nombre;
-//         this.precio = precio;
-//         this.foto = foto;
-//         this.descripcion = descripcion;
-//     } 
-// }
+class Producto {
+    constructor(id, nombre, precio, foto, descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.foto = foto;
+        this.descripcion = descripcion;
+    }
+}
 
 class ElementoCarrito {
     constructor(producto, cantidad) {
@@ -38,6 +38,10 @@ cargarCarrito();
 dibujarCarrito();
 dibujarCatalogoProductos();
 
+/**
+ * Definiciones de funciones
+ */
+
 // function cargarProductos() {
 //     productos.push(new Producto(1, "Masajista", 2000, "../../images/serviciosMasajista.jpg", "Contamos con un servicio de masajistas profesionales de 8:00 a 16:00, todos los días"));
 //     productos.push(new Producto(2, "Gimnasio", 1500, "../../images/serviciosGimnasio.jpg", "Tenemos una sala de máquinas, para que puedas realizar los ejercicios que gustes"));
@@ -58,8 +62,8 @@ const traerDatos = async () => {
 
         data.forEach (producto => {
             let {id, nombre, precio, foto, descripcion} = producto;
-            productos.push (producto);
-            // productos.push (new Producto (id, nombre, precio, foto, descripcion));     
+            // productos.push (producto);
+            productos.push (new Producto (id, nombre, precio, foto, descripcion));     
             
             dibujarCatalogoProductos();
         });
@@ -73,8 +77,6 @@ const traerDatos = async () => {
     }
 };
 traerDatos ();
-
-// Definiciones de funciones
 
 function cargarCarrito() {
 }
@@ -142,9 +144,6 @@ function removerProductoCarrito(elementoAEliminar) {
 }
 
 function crearCard(producto) {
-    // DESESTRUCTURACION 
-    let {id, nombre, precio, foto, descripcion} = producto;
-
     //Botón
     let botonAgregar = document.createElement("button");
     botonAgregar.className = "btn btn-success";
@@ -153,18 +152,18 @@ function crearCard(producto) {
     //Card body
     let cuerpoCarta = document.createElement("div");
     cuerpoCarta.className = "card-body";
-    cuerpoCarta.innerHTML = ` 
-        <h5>${nombre}</h5>
-        <h6>$ ${precio}</h6>
-        <p>${descripcion}</p>
+    cuerpoCarta.innerHTML = `
+        <h5>${producto.nombre}</h5>
+        <h6>$ ${producto.precio}</h6>
+        <p>${producto.descripcion}</p>
     `;
     cuerpoCarta.append(botonAgregar);
 
     //Imagen
     let imagen = document.createElement("img");
-    imagen.src = foto;
+    imagen.src = producto.foto;
     imagen.className = "card-img-top";
-    imagen.alt = nombre;
+    imagen.alt = producto.nombre;
 
     //Card
     let carta = document.createElement("div");
@@ -175,7 +174,7 @@ function crearCard(producto) {
 
     botonAgregar.onclick = () => {
         let elementoExistente = 
-            elementosCarrito.find((elem) => elem.id == id);
+            elementosCarrito.find((elem) => elem.producto.id == producto.id);
         
         if(elementoExistente) {
             elementoExistente.cantidad+=1;
@@ -225,76 +224,3 @@ function dibujarCatalogoProductos() {
         }
     );
 }
-
-// FINALIZAR COMPRA 
-let botonFinalizar = document.getElementById ("formularioHabitaciones");
-let datosReserva = [];
-
-botonFinalizar.addEventListener ("submit", (e) => {
-    e.preventDefault ();
-
-    const agregarStorage = (nombreApellido, email, telefono, cantidadHuesped, fechaInicio, fechaSalida) => {
-
-        localStorage.getItem('datosReserva') ? datosContacto = JSON.parse(localStorage.getItem("datosReserva")) : localStorage.setItem('datosReserva', JSON.stringify(datosContacto));
-
-        let info = {
-            nombreApellido: nombreApellido,
-            email: email,
-            telefono: telefono,
-            cantidadHuesped: cantidadHuesped,
-            fechaInicio: fechaInicio,
-            fechaSalida: fechaSalida
-        };
-
-        datosContacto.push(info);
-        localStorage.setItem("datosReserva", JSON.stringify(datosContacto));
-    }
-
-    let nombreHuesped = document.getElementById ("inputNombreApellido").value;
-    let emailHuesped = document.getElementById ("inputEmailHabitacion").value;
-    let telefonoHuesped = document.getElementById ("inputTelefonoHabitacion").value;
-    let cantidadHuesped = document.getElementById ("inputCantidadHuesped").value;
-    let fechaInicio = document.getElementById ("fechaInicio");
-    let fechaSalida = document.getElementById ("fechaSalida");
-
-    const idHabitaciones = elementosCarrito.some (elem => elem.id == 1 || elem.id == 2 || elem.id == 3 || elem.id == 4);
-
-    if (idHabitaciones && nombreHuesped !== "" && emailHuesped !== "" && telefonoHuesped !== "") {
-        agregarStorage (nombreApellido, email, telefono, cantidadHuesped, fechaInicio, fechaSalida);
-
-        swal({
-            title: 'Compra realizada con éxito!',
-            icon: 'success',
-            buttons: {
-                cerrar: {
-                    text: "Cerrar",
-                    value: false,
-                    color: "#769FCD"
-                }
-            }
-        });
-    } else if (!idHabitaciones){
-
-        let contenedor1 = document.getElementById ("reviseHabitaciones");
-        contenedor1.innerHTML = "";
-        let div = document.createElement ("div");
-        div.innerHTML = "<h2> * Debe agregar al menos una habitacion! </h2>";
-        contenedor1.appendChild (div);
-
-    } else if (nombreHuesped === "" || emailHuesped === "" || telefonoHuesped === "") {
-
-        let contenedor2 = document.getElementById ("reviseDatosHabitaciones");
-        contenedor2.innerHTML = "";
-        let div = document.createElement ("div");
-        div.innerHTML = "<h2> * Falta completar datos! </h2>";
-        contenedor2.appendChild (div);
-
-    } else if (cantidadHuesped > 4) {
-
-        let contenedor3 = document.getElementById ("reviseDatosCantidad");
-        contenedor3.innerHTML = "";
-        let div = document.createElement ("div");
-        div.innerHTML = "<h2> * No deben ser más de 4 huéspedes! </h2>";
-        contenedor3.appendChild (div);
-    }
-})
