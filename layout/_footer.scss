@@ -6,7 +6,9 @@ footer {
     .footer {
         display: grid;
         grid-template-areas: 
-        "contactanos redesSociales mediosDePago";
+        "contactanos"
+        "redesSociales"
+        "mediosDePago";
         justify-content: space-around;
 
         .contactanos {
@@ -32,13 +34,14 @@ footer {
         .distribucionFooter {
             h2 {
                 font-family: $tipografiaTitulos;
-                margin-bottom: 10%;
                 color: $colorLetrasFooter;
+                margin: 0% 0% 10% 0%;
             }
             div {
                 display: flex;
                 flex-direction: row;
                 align-items: baseline;
+                margin-bottom: 10%;
 
                 i {
                     color: $colorLetrasFooter;
@@ -53,7 +56,18 @@ footer {
                     margin-left: 10%;
                     color: $colorLetrasFooter;
                 }
+
+                @include pantallaGrande {
+                    margin-bottom: 0%;
+                }
             }
+        }
+
+        @include pantallaGrande {
+            display: grid;
+            grid-template-areas: 
+            "contactanos redesSociales mediosDePago";
+            justify-content: space-around;
         }
     }
 }

@@ -2,43 +2,48 @@
 main {
     z-index: 1;
 
-    .carousel-caption {
-        margin-bottom: 10%;
-        h5 {
-            font-family: $tipografiaTitulos;
-            text-align: left;
-            font-size: 3rem;
-            color: $colorLetrasCarrousel;
-
-            &:hover {
-                color: $colorBotonesHover;
-            }
-        }
+    .carousel {
+        .carousel-caption {
+            margin-bottom: 10%;
+            h5 {
+                font-family: $tipografiaTitulos;
+                text-align: left;
+                font-size: 3rem;
+                color: $colorLetrasCarrousel;
     
-        p {
-            font-family: $tipografiaTextos;
-            text-align: left;
-            font-size: 1.5rem;
-            color: $colorLetrasCarrousel;
+                &:hover {
+                    color: $colorBotonesHover;
+                }
+            }
+        
+            p {
+                font-family: $tipografiaTextos;
+                text-align: left;
+                font-size: 1.5rem;
+                color: $colorLetrasCarrousel;
+            }
         }
     }
 
     .unLugarUnico {
         margin: 5% 15% 5% 15%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
 
         div {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-right: 12%;
 
             h2 {
                 font-family: $tipografiaUnLugarUnico;
-                font-size: 3rem;
+                font-size: 2.5rem;
                 text-align: center;
                 margin-bottom: 7%;
+
+                @include pantallaGrande {
+                    font-size: 3rem;
+                }
             }
 
             p {
@@ -60,22 +65,46 @@ main {
                     box-shadow: none;
                 }
             }
+
+            @include pantallaGrande {
+                margin-right: 12%;
+            }
         }
 
         picture {
             img {
-                width: 110%;
-                margin-left: 12%;
+                width: 100%;
+                margin-top: 10%;
+
+                @include pantallaGrande {
+                    width: 90%;
+                    margin: 26% 0% 0% 7%;
+                }
+
+                @include pantallaPanoramica {
+                    width: 85%;
+                    margin: 0% 0% 0% 12%;
+                }
             }
+        }
+
+        @include pantallaGrande {
+            margin: 5% 5% 5% 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 
     .queNosDiferencia {
         display: grid;
         grid-template-areas: 
-        "item1 item2 item3"
-        "item4 item5 item6";
-        grid-template-columns: 1fr 1fr 1fr;
+        "item1"
+        "item2"
+        "item3"
+        "item4"
+        "item5"
+        "item6";
+        grid-template-columns: 1fr;
         align-items: flex-start;
 
         .item1 {
@@ -136,7 +165,6 @@ main {
                     font-size: 1.2rem;
                 }
             }
-
         }
 
         .item1, .item3, .item5 {
@@ -154,6 +182,15 @@ main {
                 color: $fondoQueNosDiferencia1;
             }
         }
+
+        @include pantallaGrande {
+            display: grid;
+            grid-template-areas: 
+            "item1 item2 item3"
+            "item4 item5 item6";
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: flex-start;
+        }
     }
 
     .newsletter {
@@ -165,8 +202,12 @@ main {
 
         h2 {
             font-family: $tipografiaTitulos;
-            margin-bottom: 3%;
+            margin: 5% 0% 3% 0%;
             font-weight: 800;
+
+            @include pantallaGrande {
+                margin-top: 0%;
+            }
         }
 
         div {
@@ -204,10 +245,19 @@ main {
                         box-shadow: none;
                     }
                 }
+
+                @include pantallaMediana {
+                    display: flex;
+                    justify-content: center;
+                }
             }
     
             p {
                 font-family: $tipografiaTextos;
+
+                @include pantallaMediana {
+                    margin-left: 8%;
+                }
             }
         }
     }

@@ -1,5 +1,10 @@
 // MAIN HABITACIONES
 main {
+    .imagenHabitaciones {
+        img {
+            width: 100%;
+        }
+    }
     .todasHabitaciones {
         display: flex;
         flex-direction: column;
@@ -9,20 +14,25 @@ main {
             padding: 6% 0% 0% 10%;
             display: grid;
             grid-template-areas: 
-            "img habitacionTexto";
+            "img"
+            "habitacionTexto";
             background-color: white;
 
             img {
-                width: 55%;
+                width: 85%;
                 margin-right: 10%;
                 grid-area: img;
+
+                @include pantallaPanoramica {
+                    width: 55%;
+                }
             }
 
             .habitacionTexto {
+                margin: 10% 0% 0% -10%;
                 z-index: 1;
                 grid-area: habitacionTexto;
                 background-color: white;
-                margin-left: -70%;
 
                 h2 {
                     font-family: $tipografiaTitulos;
@@ -58,6 +68,23 @@ main {
                         background-color: $colorBotonesHover;
                     }
                 }
+
+                @include celularHorizontal {
+                    margin: 5% 0% 0% 0%;
+                }
+
+                @include pantallaPanoramica {
+                    margin: 0% 0% 0% -70%;
+                }
+            }
+
+            @include pantallaPanoramica {
+                margin: -20% 10% 0% 10%;
+                padding: 6% 0% 0% 10%;
+                display: grid;
+                grid-template-areas: 
+                "img habitacionTexto";
+                background-color: white;
             }
         }
 
@@ -66,19 +93,24 @@ main {
             padding: 0% 0% 0% 10%;
             display: grid;
             grid-template-areas: 
-            "img habitacionTexto";
+            "img"
+            "habitacionTexto";
 
             img {
-                width: 55%;
+                width: 85%;
                 margin-right: 10%;
                 grid-area: img;
+
+                @include pantallaPanoramica {
+                    width: 37%;
+                }
             }
 
             .habitacionTexto {
+                margin: 10% 0% 0% -10%;
                 z-index: 1;
                 grid-area: habitacionTexto;
                 background-color: white;
-                margin-left: -70%;
 
                 h2 {
                     font-family: $tipografiaTitulos;
@@ -114,6 +146,18 @@ main {
                         background-color: $colorBotonesHover;
                     }
                 }
+
+                @include celularHorizontal {
+                    margin: 5% 0% 0% 0%;
+                }
+            }
+
+            @include pantallaPanoramica {
+                margin: 0% 0% 0% -62%;;
+                display: grid;
+                grid-template-areas: 
+                "img habitacionTexto";
+                background-color: white;
             }
         }
 
@@ -122,19 +166,24 @@ main {
             padding: 0% 0% 0% 10%;
             display: grid;
             grid-template-areas: 
-            "img habitacionTexto";
+            "img"
+            "habitacionTexto";
 
             img {
-                width: 57%;
+                width: 85%;
                 margin-right: 10%;
                 grid-area: img;
+
+                @include pantallaPanoramica {
+                    width: 57%;
+                }
             }
 
             .habitacionTexto {
+                margin: 10% 0% 0% -10%;
                 z-index: 1;
                 grid-area: habitacionTexto;
                 background-color: white;
-                margin-left: -57%;
 
                 h2 {
                     font-family: $tipografiaTitulos;
@@ -170,6 +219,18 @@ main {
                         background-color: $colorBotonesHover;
                     }
                 }
+
+                @include celularHorizontal {
+                    margin: 5% 0% 0% 0%;
+                }
+            }
+
+            @include pantallaPanoramica {
+                margin: 0% 0% 0% -50%;;
+                display: grid;
+                grid-template-areas: 
+                "img habitacionTexto";
+                background-color: white;
             }
         }
 
@@ -178,19 +239,24 @@ main {
             padding: 0% 0% 0% 10%;
             display: grid;
             grid-template-areas: 
-            "img habitacionTexto";
+            "img"
+            "habitacionTexto";
 
             img {
-                width: 45.5%;
+                width: 85%;
                 margin-right: 10%;
                 grid-area: img;
+
+                @include pantallaPanoramica {
+                    width: 45.5%;;
+                }
             }
 
             .habitacionTexto {
+                margin: 10% 0% 0% -10%;
                 z-index: 1;
                 grid-area: habitacionTexto;
                 background-color: white;
-                margin-left: -195%;
 
                 h2 {
                     font-family: $tipografiaTitulos;
@@ -226,6 +292,18 @@ main {
                         background-color: $colorBotonesHover;
                     }
                 }
+
+                @include celularHorizontal {
+                    margin: 5% 0% 0% 0%;
+                }
+            }
+
+            @include pantallaPanoramica {
+                margin: 0% 0% 0% -50%;;
+                display: grid;
+                grid-template-areas: 
+                "img habitacionTexto";
+                background-color: white;
             }
         }
     }
@@ -238,6 +316,7 @@ main {
             display: flex;
             justify-content: center;
             grid-area: serviciosAdicionales;
+            font-size: 2rem;
         }
 
         h3 {
@@ -246,6 +325,11 @@ main {
             display: flex;
             justify-content: center;
             font-size: 1rem;
+            text-align: center;
+
+            @include pantallaGrande {
+                text-align: none;
+            }
         }
 
         .cardsServicios {
@@ -322,7 +406,7 @@ main {
             .botones {
                 display: flex;
                 flex-direction: row;
-                margin: 2% 0% 0% 0%;
+                margin: 9% 0% 0% 0%;
 
                 #botonFinalizar, #botonVerCarrito {
                     display: flex;
@@ -337,6 +421,10 @@ main {
                             background-color: $colorBotonesHover;
                         }
                     }
+                }
+
+                @include pantallaGrande {
+                    margin-top: 2%;
                 }
             }
 
@@ -354,16 +442,46 @@ main {
 
 // MODAL
 .modal {
-    h5 {
-        font-family: $tipografiaTitulos;
-    }
-    tr {
-        font-family: $tipografiaTextos;
+    .modal-content {
+        .modal-body {
+            padding: 0%;
+    
+            @include pantallaGrande {
+                padding: var(--bs-modal-padding);
+            }
+        }
 
-        .total {
-            width: 750%;
+        h5 {
+            font-family: $tipografiaTitulos;
+        }
+        .table {
+            display: grid;
+            grid-template-columns: 1fr;
+    
+            tr {
+                font-family: $tipografiaTextos;
+        
+                .total {
+                    @include pantallaGrande {
+                        width: 750%;
+                    }
+                }
+
+                img {
+                    display: none;
+
+                    @include celularHorizontal {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        @include pantallaGrande {
+            width: 110%;
         }
     }
+}
 
     .btn {
         @include botones;
@@ -372,11 +490,6 @@ main {
             background-color: $colorBotonesHover;
         }
     }
-
-    .modal-content {
-        width: 110%;
-    }
-}
 
 // SWAL 
 .swal-button:not([disabled]):hover {

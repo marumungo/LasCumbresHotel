@@ -1,8 +1,8 @@
 /* estilos main contacto */
 .preguntas_contacto {
     margin: 0% 0% 3% 1%;
-    padding-top: 12%;
     width: 100%;
+    padding-top: 5%;
     z-index: 1;
 
     .contactoGrupo {
@@ -11,7 +11,7 @@
         .contacto {
             font-family: $tipografiaTextos;
             font-weight: bolder;
-            font-size: 1rem;
+            font-size: 2rem;
             text-align: left;
 
             @include pantallaGrande {
@@ -105,6 +105,10 @@
             }
         }
 
+        @include pantallaGrande {
+            margin-top: 5%;
+        }
+
         @include pantallaPanoramica {
             margin-bottom: 2%;
         }
@@ -120,6 +124,7 @@
 
     @include pantallaGrande {
         margin: 0% 0% 3% 1%;
+        padding-top: 12%;
     }
 
     @include pantallaPanoramica {

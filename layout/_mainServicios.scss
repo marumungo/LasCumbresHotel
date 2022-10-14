@@ -1,26 +1,46 @@
 // MAIN SERVICIOS
 main {
+    .servicios1 {
+        img {
+            width: 100%;
+        }
+    }
     .servicios {
-        margin: -30% 10% 10% 10%;
+        margin: 5%;
         display: grid;
         grid-template-areas: 
-        "servicioTexto servicioResumen";
+        "servicioTexto"
+        "servicioResumen";
         align-items: center;
-        grid-template-columns: 1fr 1fr;
 
         .servicioTexto {
             grid-area: servicioTexto;
+            width: 100%;
 
             h2 {
                 font-family: $tipografiaTitulos;
-                color: $letrasServiciosFoto;
-                font-size: 3rem;
+                color: black;
+                font-size: 2.2rem;
+                width: 100%;
+                text-align: center;
+
+                @include pantallaGrande {
+                    color: $letrasServiciosFoto;
+                    font-size: 3rem;
+                    text-align: none;
+                }
             }
 
             p {
                 font-family: $tipografiaTextos;
-                color: $letrasServiciosFoto;
-                font-size: 1.3rem;
+                color: black;
+                font-size: 1rem;
+                width: 100%;
+
+                @include pantallaGrande {
+                    color: $letrasServiciosFoto;
+                    font-size: 1.3rem;
+                }
             }
         }
         .serviciosResumen {
@@ -29,7 +49,6 @@ main {
             grid-template-areas: 
             "servicio1 servicio2"
             "servicio3 servicio4";
-            margin-left: 10%;
             color: $letrasServiciosFoto;
 
             .servicio1 {
@@ -63,33 +82,53 @@ main {
                 }
             }
 
+            @include pantallaGrande {
+                margin-left: 10%;
+            }
+        }
+
+        @include pantallaGrande {
+            margin: -25% 10% 10% 10%;
+            display: grid;
+            grid-template-areas: 
+            "servicioTexto servicioResumen";
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include pantallaPanoramica {
+            margin: -25% 10% 10% 10%;
         }
     }
 
     .serviciosHabitaciones {
-        margin-top: 16%;
+        margin-top: 10%;
         display: grid;
         grid-template-areas: 
-        "tituloServicioHabitaciones tituloServicioHabitaciones tituloServicioHabitaciones"
-        "servicioHabitacion         servicioHabitacion         servicioHabitacion";
-        grid-template-columns: 1fr 1fr 1fr;
+        "tituloServicioHabitaciones"
+        "servicioHabitacion";
+        grid-template-columns: 1fr;
         justify-items: center;
 
         h2 {
             grid-area: tituloServicioHabitaciones;
             font-family: $tipografiaTitulos;
+            font-size: 2rem;
         }
 
         div {
-            width: 100%;
-            margin: 3% 3% 3% 10%;
+            margin: 3%;
             grid-area: servicioHabitacion;
             display: grid;
             grid-template-areas: 
-            "servicioHabitacion1 servicioHabitacion2 servicioHabitacion3"
-            "servicioHabitacion4 servicioHabitacion5 servicioHabitacion6";
+            "servicioHabitacion1"
+            "servicioHabitacion2"
+            "servicioHabitacion3"
+            "servicioHabitacion4"
+            "servicioHabitacion5"
+            "servicioHabitacion6";
             font-family: $tipografiaTextos;
-            justify-items: space-evenly;
+            justify-items: center;
 
             .servicioHabitacion1 {
                 grid-area: servicioHabitacion1;
@@ -109,14 +148,86 @@ main {
             .servicioHabitacion6 {
                 grid-area: servicioHabitacion6;
             }
+
+            .serviciosTitulos {
+                margin-top: 10%;
+                text-align: center;
+
+                @include pantallaMediana {
+                    text-align: left;
+                    padding: 15%;
+                }
+
+                @include pantallaGrande {
+                    margin-top: 0%;
+                    padding: 0%;
+                }
+            }
+
+            .serviciosTituloss {
+                margin-top: 7%;
+                text-align: center;
+
+                @include pantallaMediana {
+                    text-align: left;
+                }
+
+                @include pantallaGrande {
+                    margin-top: 0%;
+                }
+            }
+
+            h4 {
+                margin-left: 10%;
+            }
+
+            @include pantallaMediana {
+                margin: 3% 3% 3% 3%;
+                display: grid;
+                grid-template-areas: 
+                "servicioHabitacion1 servicioHabitacion2"
+                "servicioHabitacion3 servicioHabitacion4"
+                "servicioHabitacion5 servicioHabitacion6";
+                justify-content: space-evenly;
+                align-items: baseline;
+                justify-items: start;
+            }
+
+            @include pantallaGrande {
+                width: 100%;
+                display: grid;
+                grid-template-areas: 
+                "servicioHabitacion1 servicioHabitacion2 servicioHabitacion3"
+                "servicioHabitacion4 servicioHabitacion5 servicioHabitacion6";
+                font-family: $tipografiaTextos;
+                justify-items: space-evenly;
+            }
+
+            @include pantallaPanoramica {
+                margin: 3% 10% 3% 10%;
+                padding: 5%;
+                justify-content: space-between;
+                align-items: baseline;
+                justify-items: start;
+            }
+        }
+
+        @include pantallaGrande {
+            display: grid;
+            grid-template-areas: 
+            "tituloServicioHabitaciones tituloServicioHabitaciones tituloServicioHabitaciones"
+            "servicioHabitacion         servicioHabitacion         servicioHabitacion";
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+        }
+
+        @include pantallaPanoramica {
+            margin-top: 5%;
         }
     }
 
     .serviciosHabitacionesHotel {
         margin: 5% 0% 3% 0%;
-        div {
-            margin-right: 8%;
-        }
     }
 
     .serviciosGaleria {
@@ -129,24 +240,43 @@ main {
 
         h2 {
             grid-area: tituloGaleria;
+            font-size: 2rem;
             font-family: $tipografiaTitulos;
             margin-bottom: 3%;
         }
 
         div {
-            margin: 0% 5% 0% 12%;
-            width: 100%;
+            margin: 2%;
             grid-area: imagenesGaleria;
             display: grid;
             grid-template-areas: 
-            "imagenesGaleria imagenesGaleria imagenesGaleria"
-            "imagenesGaleria imagenesGaleria imagenesGaleria";
-            justify-items: space-evenly;
+            "imagenesGaleria"
+            "imagenesGaleria"
+            "imagenesGaleria"
+            "imagenesGaleria"
+            "imagenesGaleria"
+            "imagenesGaleria";
+            justify-items: space-between;
 
             img {
                 grid-area: imagenesGaleria;
+                margin-left: 11%;
                 width: 80%;
-                margin-bottom: 20%;
+                margin-bottom: 10%;
+
+                @include pantallaGrande {
+                    margin-bottom: 20%;
+                }
+            }
+
+            @include pantallaGrande {
+                margin: 0%;
+                grid-area: imagenesGaleria;
+                display: grid;
+                grid-template-areas: 
+                "imagenesGaleria imagenesGaleria imagenesGaleria"
+                "imagenesGaleria imagenesGaleria imagenesGaleria";
+                justify-items: space-evenly;
             }
         }
     }

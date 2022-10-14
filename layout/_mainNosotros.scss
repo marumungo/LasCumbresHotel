@@ -1,10 +1,17 @@
 // MAIN NOSOTROS
 main {
+    .nosotros1 {
+        img {
+            width: 100%;
+        }
+    }
+
     .nosotros {
-        margin: 3% 3% 3% 0%;
+        margin: 3%;
         display: grid;
         grid-template-areas: 
-        "imagenNosotros textoNosotros";
+        "textoNosotros"
+        "imagenNosotros";
 
         img {
             width: 100%;
@@ -12,8 +19,8 @@ main {
         }
 
         .textoNosotros {
-            margin-left: 10%;
-            width: 90%;
+            margin: 5%;
+            width: auto;
             grid-area: textoNosotros;
 
             h2 {
@@ -38,6 +45,19 @@ main {
                     background-color: $colorBotonesHover;
                 }
             }
+
+            @include pantallaGrande {
+                margin-left: 10%;
+                width: 90%;
+            }
+        }
+
+        @include pantallaGrande {
+            margin: 3% 3% 3% 0%;
+            display: grid;
+            grid-template-areas: 
+            "imagenNosotros textoNosotros";
+            align-items: center;
         }
     }
 }
