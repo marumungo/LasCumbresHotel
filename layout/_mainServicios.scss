@@ -47,8 +47,10 @@ main {
             grid-area: servicioResumen;
             display: grid;
             grid-template-areas: 
-            "servicio1 servicio2"
-            "servicio3 servicio4";
+            "servicio1"
+            "servicio2"
+            "servicio3"
+            "servicio4";
             color: $letrasServiciosFoto;
 
             .servicio1 {
@@ -80,6 +82,13 @@ main {
                 &:hover {
                     color: $iconosHover;
                 }
+            }
+
+            @include celularHorizontal {
+                display: grid;
+                grid-template-areas: 
+                "servicio1 servicio2"
+                "servicio3 servicio4";
             }
 
             @include pantallaGrande {
@@ -204,7 +213,7 @@ main {
             }
 
             @include pantallaPanoramica {
-                margin: 3% 10% 3% 10%;
+                margin: 0% 10% 0% 10%;
                 padding: 5%;
                 justify-content: space-between;
                 align-items: baseline;
@@ -228,6 +237,14 @@ main {
 
     .serviciosHabitacionesHotel {
         margin: 5% 0% 3% 0%;
+
+        @include pantallaPanoramica {
+            margin: 0%;
+
+            div {
+                margin: 0% 2% 0% 0%;
+            }
+        }
     }
 
     .serviciosGaleria {

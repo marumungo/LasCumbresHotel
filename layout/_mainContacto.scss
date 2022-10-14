@@ -93,6 +93,7 @@
                     font-family: $tipografiaTextos;
                     font-size: 1rem;
                     color: red;
+                    margin: 7% 0% 7% 0%;
                 }
             }
 
@@ -129,5 +130,6 @@
 
     @include pantallaPanoramica {
         margin: 0% 0% 3% 1%;
+        padding-top: 7%;
     }
 }

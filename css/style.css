@@ -511,7 +511,7 @@ main .servicios .servicioTexto p {
 main .servicios .serviciosResumen {
   grid-area: servicioResumen;
   display: grid;
-  grid-template-areas: "servicio1 servicio2" "servicio3 servicio4";
+  grid-template-areas: "servicio1" "servicio2" "servicio3" "servicio4";
   color: white;
 }
 
@@ -548,6 +548,13 @@ main .servicios .serviciosResumen i {
 
 main .servicios .serviciosResumen i:hover {
   color: #B9D7EA;
+}
+
+@media (min-width: 576px) {
+  main .servicios .serviciosResumen {
+    display: grid;
+    grid-template-areas: "servicio1 servicio2" "servicio3 servicio4";
+  }
 }
 
 @media (min-width: 992px) {
@@ -682,7 +689,7 @@ main .serviciosHabitaciones div h4 {
 
 @media (min-width: 1200px) {
   main .serviciosHabitaciones div {
-    margin: 3% 10% 3% 10%;
+    margin: 0% 10% 0% 10%;
     padding: 5%;
     justify-content: space-between;
     align-items: baseline;
@@ -707,6 +714,15 @@ main .serviciosHabitaciones div h4 {
 
 main .serviciosHabitacionesHotel {
   margin: 5% 0% 3% 0%;
+}
+
+@media (min-width: 1200px) {
+  main .serviciosHabitacionesHotel {
+    margin: 0%;
+  }
+  main .serviciosHabitacionesHotel div {
+    margin: 0% 2% 0% 0%;
+  }
 }
 
 main .serviciosGaleria {
@@ -1225,6 +1241,12 @@ main .formDatos .formularioHuesped #reviseDatos h2 {
   margin-bottom: 2%;
 }
 
+@media (min-width: 1200px) {
+  main .formDatos {
+    margin-bottom: 2%;
+  }
+}
+
 .modal .modal-content .modal-body {
   padding: 0%;
 }
@@ -1590,6 +1612,7 @@ main .padreProductos .detalleProducto .btn:focus {
   font-family: "Quicksand", sans-serif;
   font-size: 1rem;
   color: red;
+  margin: 7% 0% 7% 0%;
 }
 
 @media (min-width: 992px) {
@@ -1635,6 +1658,7 @@ main .padreProductos .detalleProducto .btn:focus {
 @media (min-width: 1200px) {
   .preguntas_contacto {
     margin: 0% 0% 3% 1%;
+    padding-top: 7%;
   }
 }
 
