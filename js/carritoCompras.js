@@ -1,5 +1,4 @@
 // CARRITO DE COMPRAS
-
 class Producto {
     constructor(id, nombre, precio, foto, descripcion) {
         this.id = id;
@@ -9,7 +8,6 @@ class Producto {
         this.descripcion = descripcion;
     }
 }
-
 class ElementoCarrito {
     constructor(producto, cantidad) {
         this.producto = producto;
@@ -21,7 +19,7 @@ const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
 
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
 const productos = [];
-const elementosCarrito = [];
+let elementosCarrito = [];
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 
@@ -113,8 +111,10 @@ function dibujarCarrito() {
             //Eliminar producto
             let botonEliminarProducto = document.getElementById(`eliminar-producto-${elemento.producto.id}`);
             botonEliminarProducto.addEventListener('click', () => {
+                elementosCarrito = JSON.parse(localStorage.getItem("elementosCarrito"));
                 let indiceEliminar =  elementosCarrito.indexOf(elemento);
                 elementosCarrito.splice(indiceEliminar,1);
+                localStorage.setItem("elementosCarrito", JSON.stringify(elementosCarrito));
                 
                 dibujarCarrito();
             });
@@ -136,12 +136,7 @@ function dibujarCarrito() {
     elementosCarrito.length == 0 ? contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>` : contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: $${totalCompora}</th>`;
 }
 
-function removerProductoCarrito(elementoAEliminar) {
-    const elementosAMantener = elementosCarrito.filter((elemento) => elementoAEliminar.producto.id != elemento.producto.id);
-    elementosCarrito.length = 0;
 
-    elementosAMantener.forEach((elemento) => elementosCarrito.push(elemento));
-}
 
 function crearCard(producto) {
     //Botón
@@ -181,6 +176,7 @@ function crearCard(producto) {
         } else {
             let elementoCarrito = new ElementoCarrito(producto, 1);
             elementosCarrito.push(elementoCarrito);
+            localStorage.setItem("elementosCarrito", JSON.stringify(elementosCarrito));
         }
 
         dibujarCarrito();
@@ -229,10 +225,14 @@ function dibujarCatalogoProductos() {
 let botonFinalizar = document.getElementById ("formularioHabitaciones");
 let datosReserva = [];
 
+
+let contenedor = document.getElementById ("reviseDatos");
+
 botonFinalizar.addEventListener ("submit", (e) => {
     e.preventDefault ();
 
     const agregarStorage = (nombreApellido, email, telefono, cantidadHuesped, fechaInicio, fechaSalida) => {
+        let datosContacto = [];
 
         localStorage.getItem('datosReserva') ? datosContacto = JSON.parse(localStorage.getItem("datosReserva")) : localStorage.setItem('datosReserva', JSON.stringify(datosContacto));
 
@@ -249,17 +249,22 @@ botonFinalizar.addEventListener ("submit", (e) => {
         localStorage.setItem("datosReserva", JSON.stringify(datosContacto));
     }
 
+    console.log(elementosCarrito)
+
     let nombreHuesped = document.getElementById ("inputNombreApellido").value;
     let emailHuesped = document.getElementById ("inputEmailHabitacion").value;
     let telefonoHuesped = document.getElementById ("inputTelefonoHabitacion").value;
     let cantidadHuesped = document.getElementById ("inputCantidadHuesped").value;
-    let fechaInicio = document.getElementById ("fechaInicio");
-    let fechaSalida = document.getElementById ("fechaSalida");
+    let fechaInicio = document.getElementById ("fechaInicio").value;
+    let fechaSalida = document.getElementById ("fechaSalida").value;
 
-    const idHabitaciones = elementosCarrito.some (elem => elem.id == 1 || elem.id == 2 || elem.id == 3 || elem.id == 4);
+    localStorage.setItem("elementosCarrito", JSON.stringify(elementosCarrito));
+    let idHabitaciones = JSON.parse(localStorage.getItem("elementosCarrito"));
+    let longitudArray = idHabitaciones.length;
+    console.log(longitudArray)
 
-    if (idHabitaciones && nombreHuesped !== "" && emailHuesped !== "" && telefonoHuesped !== "") {
-        agregarStorage (nombreApellido, email, telefono, cantidadHuesped, fechaInicio, fechaSalida);
+    if (idHabitaciones != 0 && nombreHuesped !== "" && emailHuesped !== "" && telefonoHuesped !== "" && cantidadHuesped <= 4 && cantidadHuesped > 0) {
+        agregarStorage (nombreHuesped, emailHuesped, telefonoHuesped, cantidadHuesped, fechaInicio, fechaSalida);
 
         swal({
             title: 'Compra realizada con éxito!',
@@ -272,28 +277,20 @@ botonFinalizar.addEventListener ("submit", (e) => {
                 }
             }
         });
-    } else if (!idHabitaciones){
+        contenedor.innerHTML = "";
+        localStorage.removeItem("elementosCarrito");
+    } 
+    else if(idHabitaciones == 0 && nombreHuesped !== "" && emailHuesped !== "" && telefonoHuesped !== "" && cantidadHuesped !== ""){
+        contenedor.innerHTML = "<h2> * Debe agregar al menos un elemento al carrito! </h2>";
+    }
 
-        let contenedor1 = document.getElementById ("reviseHabitaciones");
-        contenedor1.innerHTML = "";
-        let div = document.createElement ("div");
-        div.innerHTML = "<h2> * Debe agregar al menos una habitacion! </h2>";
-        contenedor1.appendChild (div);
+    else if (idHabitaciones != 0 && (nombreHuesped == "" || emailHuesped == "" || telefonoHuesped == "" || cantidadHuesped == "")) {
+        contenedor.innerHTML = "<h2> * Falta completar datos! </h2>";
 
-    } else if (nombreHuesped === "" || emailHuesped === "" || telefonoHuesped === "") {
-
-        let contenedor2 = document.getElementById ("reviseDatosHabitaciones");
-        contenedor2.innerHTML = "";
-        let div = document.createElement ("div");
-        div.innerHTML = "<h2> * Falta completar datos! </h2>";
-        contenedor2.appendChild (div);
-
-    } else if (cantidadHuesped > 4) {
-
-        let contenedor3 = document.getElementById ("reviseDatosCantidad");
-        contenedor3.innerHTML = "";
-        let div = document.createElement ("div");
-        div.innerHTML = "<h2> * No deben ser más de 4 huéspedes! </h2>";
-        contenedor3.appendChild (div);
+    } else if (idHabitaciones != 0 && nombreHuesped !== "" && emailHuesped !== "" && telefonoHuesped !== "" && cantidadHuesped > 4) {
+        contenedor.innerHTML = "<h2> * No deben ser más de 4 huéspedes! </h2>";
+    }
+    else if(idHabitaciones == 0  && nombreHuesped == "" && emailHuesped == "" && telefonoHuesped == "" && cantidadHuesped == ""){
+        contenedor.innerHTML = "<h2> * No hay elementos agregados al carrito y falta completar los datos! </h2>";
     }
 })

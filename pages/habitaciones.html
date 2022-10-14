@@ -34,7 +34,7 @@
                 </div>
                 <div>
                     <i class="fa-brands fa-whatsapp"></i>
-                    <p>11 3876-4538</p>
+                    <p>+54 9 11 3876-4538</p>
                 </div>
             </div>
     
@@ -68,13 +68,13 @@
     </header>
 
     <main>
-        <picture class="imagenHabitaciones">
+        <picture>
             <source media="(max-width: 320px)" srcset="../images/habitaciones1320.jpg">
             <source media="(max-width: 576px)" srcset="../images/habitaciones1576.jpg">
             <source media="(max-width: 768px)" srcset="../images/habitaciones1768.jpg">
             <source media="(max-width: 992px)" srcset="../images/habitaciones1992.jpg">
             <source media="(max-width: 1200px)" srcset="../images/habitaciones11200.jpg">
-            <img src="../images/habitaciones1.jpg" alt="montañas">
+            <img src="../images/habitaciones1.jpg" alt="logo">
         </picture>
 
         <div class="todasHabitaciones">
@@ -85,7 +85,7 @@
                     <source media="(max-width: 768px)" srcset="../images/habitacion1(1)768.jpg">
                     <source media="(max-width: 992px)" srcset="../images/habitacion1(1)992.jpg">
                     <source media="(max-width: 1200px)" srcset="../images/habitacion1(1)1200.jpg">
-                    <img src="../images/habitacion1(1).jpg" alt="habitacion1">
+                    <img src="../images/habitacion1(1).jpg" alt="logo">
                 </picture>
                 <div class="habitacionTexto">
                     <h2>Habitación Estandard</h2>
@@ -116,7 +116,7 @@
                     <source media="(max-width: 768px)" srcset="../images/habitacion2(1)768.jpg">
                     <source media="(max-width: 992px)" srcset="../images/habitacion2(1)992.jpg">
                     <source media="(max-width: 1200px)" srcset="../images/habitacion2(1)1200.jpg">
-                    <img src="../images/habitacion2(1).jpg" alt="habitacion2">
+                    <img src="../images/habitacion2(1).jpg" alt="logo">
                 </picture>
                 <div class="habitacionTexto">
                     <h2>Habitación Bella Vista</h2>
@@ -147,7 +147,7 @@
                     <source media="(max-width: 768px)" srcset="../images/habitacion3(1)768.jpg">
                     <source media="(max-width: 992px)" srcset="../images/habitacion3(1)992.jpg">
                     <source media="(max-width: 1200px)" srcset="../images/habitacion3(1)1200.jpg">
-                    <img src="../images/habitacion3(1).jpg" alt="habitacion3">
+                    <img src="../images/habitacion3(1).jpg" alt="logo">
                 </picture>
                 <div class="habitacionTexto">
                     <h2>Habitación Altas Nieves</h2>
@@ -177,7 +177,7 @@
                     <source media="(max-width: 768px)" srcset="../images/habitacion4(1)768.jpg">
                     <source media="(max-width: 992px)" srcset="../images/habitacion4(1)992.jpg">
                     <source media="(max-width: 1200px)" srcset="../images/habitacion4(1)1200.jpg">
-                    <img src="../images/habitacion4(1).jpg" alt="habitacion4">
+                    <img src="../images/habitacion4(1).jpg" alt="logo">
                 </picture>
                 <div class="habitacionTexto">
                     <h2>Suite de Lujo</h2>
@@ -245,13 +245,13 @@
                     </div>
                     <div class="col-6 calendario">
                         <label for="start">Fecha de entrada</label>
-                        <input type="date" class="form-control" id="start fechaInicio" name="trip-start"
+                        <input type="date" class="form-control" id="fechaInicio" name="trip-start"
                             value="2022-07-22"
                             min="2022-01-01" max="2028-12-31">
                     </div>
                     <div class="col-6 calendario">
                         <label for="start">Fecha de salida</label>
-                        <input type="date" class="form-control" id="start fechaSalida" name="trip-finish"
+                        <input type="date" class="form-control" id="fechaSalida" name="trip-finish"
                             value="2022-07-22"
                             min="2022-01-01" max="2028-12-31">
                     </div>
@@ -263,9 +263,7 @@
                             <button id="toggleMyModal" type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">VER CARRITO</button>
                         </a>
                     </div>
-                    <div id="reviseHabitaciones"></div>
-                    <div id="reviseDatosHabitaciones"></div>
-                    <div id="reviseDatosCantidad"></div>
+                    <div id="reviseDatos"></div>
                 </form>
             </div>
         </div>
@@ -349,7 +347,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="../js/reservar.js"></script>
     <script src="../js/carritoCompras.js"></script>
 </body>
 </html>

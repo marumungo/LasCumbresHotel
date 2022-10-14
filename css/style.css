@@ -836,7 +836,7 @@ main .todasHabitaciones .habitaciones .habitacionTexto .btn:hover {
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones .habitacionTexto {
-    margin: 0% 0% 0% -70%;
+    margin: 13% 0% 0% -70%;
   }
 }
 
@@ -865,7 +865,7 @@ main .todasHabitaciones .habitaciones2 img {
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones2 img {
-    width: 37%;
+    width: 45.5%;
   }
 }
 
@@ -916,13 +916,13 @@ main .todasHabitaciones .habitaciones2 .habitacionTexto .btn:hover {
 
 @media (min-width: 576px) {
   main .todasHabitaciones .habitaciones2 .habitacionTexto {
-    margin: 5% 0% 0% 0%;
+    margin: 10% 0% 0% -113%;
   }
 }
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones2 {
-    margin: 0% 0% 0% -62%;
+    margin: 3% 0% 0% 10%;
     display: grid;
     grid-template-areas: "img habitacionTexto";
     background-color: white;
@@ -944,7 +944,7 @@ main .todasHabitaciones .habitaciones3 img {
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones3 img {
-    width: 57%;
+    width: 47%;
   }
 }
 
@@ -995,13 +995,13 @@ main .todasHabitaciones .habitaciones3 .habitacionTexto .btn:hover {
 
 @media (min-width: 576px) {
   main .todasHabitaciones .habitaciones3 .habitacionTexto {
-    margin: 5% 0% 0% 0%;
+    margin: 10% 0% 0% -97%;
   }
 }
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones3 {
-    margin: 0% 0% 0% -50%;
+    margin: 3% 0% 0% 10%;
     display: grid;
     grid-template-areas: "img habitacionTexto";
     background-color: white;
@@ -1023,7 +1023,7 @@ main .todasHabitaciones .habitaciones4 img {
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones4 img {
-    width: 45.5%;
+    width: 39%;
   }
 }
 
@@ -1074,13 +1074,13 @@ main .todasHabitaciones .habitaciones4 .habitacionTexto .btn:hover {
 
 @media (min-width: 576px) {
   main .todasHabitaciones .habitaciones4 .habitacionTexto {
-    margin: 5% 0% 0% 0%;
+    margin: 13% 0% 0% -270%;
   }
 }
 
 @media (min-width: 1200px) {
   main .todasHabitaciones .habitaciones4 {
-    margin: 0% 0% 0% -50%;
+    margin: 3% 0% 0% 10%;
     display: grid;
     grid-template-areas: "img habitacionTexto";
     background-color: white;
@@ -1217,11 +1217,12 @@ main .formDatos .formularioHuesped .botones #botonFinalizar .btn:hover, main .fo
   }
 }
 
-main .formDatos .formularioHuesped #reviseHabitaciones h2, main .formDatos .formularioHuesped #reviseDatosHabitaciones h2, main .formDatos .formularioHuesped #reviseDatosCantidad h2 {
+main .formDatos .formularioHuesped #reviseDatos h2 {
   font-family: "Quicksand", sans-serif;
   font-weight: lighter;
   color: red;
   font-size: 1rem;
+  margin-bottom: 2%;
 }
 
 .modal .modal-content .modal-body {
