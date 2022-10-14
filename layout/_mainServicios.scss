@@ -15,7 +15,7 @@ main {
 
         .servicioTexto {
             grid-area: servicioTexto;
-            width: 100%;
+            width: 93%;
 
             h2 {
                 font-family: $tipografiaTitulos;
@@ -36,6 +36,7 @@ main {
                 color: black;
                 font-size: 1rem;
                 width: 100%;
+                text-align: center;
 
                 @include pantallaGrande {
                     color: $letrasServiciosFoto;
@@ -45,6 +46,7 @@ main {
         }
         .serviciosResumen {
             grid-area: servicioResumen;
+            width: 73%;
             display: grid;
             grid-template-areas: 
             "servicio1"
@@ -74,7 +76,6 @@ main {
                 font-family: $tipografiaTextos;
                 background-color: $fondoQueNosDiferencia3;
                 padding: 10% 30% 10% 30%;
-                width: 100%;
             }
 
             i {
@@ -89,6 +90,8 @@ main {
                 grid-template-areas: 
                 "servicio1 servicio2"
                 "servicio3 servicio4";
+
+                width: 100%;
             }
 
             @include pantallaGrande {
