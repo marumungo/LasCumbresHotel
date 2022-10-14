@@ -17,7 +17,7 @@ class ElementoCarrito {
 
 const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
 
-//Arrays donde guardaremos catálogo de productos y elementos en carrito
+// Arrays donde guardaremos catálogo de productos y elementos en carrito
 const productos = [];
 let elementosCarrito = [];
 
@@ -27,29 +27,15 @@ const contenedorCarritoCompras = document.querySelector("#items")
 
 const contenedorFooterCarrito = document.querySelector("#footer");
 
-/**
- * Ejecución de funciones
- */
+// Ejecución de funciones
 
-// cargarProductos();
 cargarCarrito();
 dibujarCarrito();
 dibujarCatalogoProductos();
 
-/**
- * Definiciones de funciones
- */
 
-// function cargarProductos() {
-//     productos.push(new Producto(1, "Masajista", 2000, "../../images/serviciosMasajista.jpg", "Contamos con un servicio de masajistas profesionales de 8:00 a 16:00, todos los días"));
-//     productos.push(new Producto(2, "Gimnasio", 1500, "../../images/serviciosGimnasio.jpg", "Tenemos una sala de máquinas, para que puedas realizar los ejercicios que gustes"));
-//     productos.push(new Producto(3, "Sauna", 4000, "../../images/serviciosSauna.jpg", "Poseemos un sauna en nuestro último piso, que está habilitado las 24 horas del día"));
-//     productos.push(new Producto(4, "Computadoras", 800, "../../images/serviciosComputadoras.jpg", "Nuestro hotel cuenta con una sala de computadoras, para que utilices en caso de necesitarlas"));
-//     productos.push(new Producto(5, "Guía turístico", 4000, "../../images/serviciosGuiaTuristico.jpg", "Paquete exclusivo de excursiones (todo pago) por 7 días seguidos, junto con guías especializados"));
-//     productos.push(new Producto(6, "Restaurante", 8000, "../../images/serviciosRestaurante.jpg", "Cena libre en nuestro restaurante, incluida por 7 días (precio por persona)"));
-//     productos.push(new Producto(7, "Teatro", 5400, "../../images/serviciosTeatro.jpg", "Obras de teatro incluidas durante una estadía de 7 días (precio por persona)"));
-//     productos.push(new Producto(8, "Sala de juegos", 3000, "../../images/serviciosSalaDeJuegos.jpg", "Acceso libre a nuestro rincón de juegos, incluyendo ping pong, pool, juegos electrónicos, etc."));
-// }
+// Definiciones de funciones
+
 
 // Traer datos del data.json
 
@@ -126,12 +112,6 @@ function dibujarCarrito() {
         (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad,
         valorInicial
     );
-
-    // if(elementosCarrito.length == 0) {
-    //     contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
-    // } else {
-    //     contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: $${totalCompora}</th>`;
-    // }
 
     elementosCarrito.length == 0 ? contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>` : contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: $${totalCompora}</th>`;
 }
